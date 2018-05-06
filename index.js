@@ -1,8 +1,18 @@
 const express = require("express");
 const path = require("path");
-
-
 const app = express();
+const routes = require("./routes");
+const mongoose = require("mongoose");
+
+mongoose.Promise = global.Promise;
+const MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/records_db"
+
+mongoose
+    .connect(MONGODB_URI)
+    .then(()=>console.log("connection to mongodb sucessful"))
+    .catch(err => console.log(err))
+
+app.use(routes)
 
 if(process.env.NODE_ENV === "production") {
     app.use(express.static(path.join(__dirname, "client/build")));
