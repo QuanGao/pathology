@@ -111,7 +111,7 @@ export default class Example extends React.Component {
           <Input type="textarea" name="Vfindings" id="VfindingsSelect"/>
         </FormGroup>
         <FormGroup>
-          <Label for="Mvessels">Maternal vessels</Label>
+          <Label for="MvesselsMulti">Maternal vessels</Label>
           <Input type="select" name="Mvessels" id="MvesselsMulti" multiple>
             <option>Insufficient for diagnosis</option>
             <option>Appropriate</option>
