@@ -11,15 +11,13 @@ class App extends Component {
   render() {
     return (
     <Router>
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to Placenta Pathology Logger</h1>
-        </header>
+      <div>
        <Navbar/>
-        <Route exact path="/new" component={addForm}></Route>
-        <Route exact path="/search" component={searchForm}></Route>
-        <Route exact path="/edit" component={editForm}></Route>
+       <div className="App container">
+            <Route exact path="/new" component={addForm}></Route>
+            <Route exact path="/search" component={searchForm}></Route>
+            <Route exact path="/edit" component={editForm}></Route>
+        </div>
       </div>
     </Router>
     );
