@@ -1,10 +1,9 @@
 import React from "react"
+import API from "../../utils/API"
 import "./PathForm.css"
 
-import { Form, DatePicker, TimePicker, Button,InputNumber } from 'antd';
+import { Form, DatePicker, Button,InputNumber, Input } from 'antd';
 const FormItem = Form.Item;
-const MonthPicker = DatePicker.MonthPicker;
-const RangePicker = DatePicker.RangePicker;
 
 class TimeRelatedForm extends React.Component {
   handleSubmit = (e) => {
@@ -14,13 +13,12 @@ class TimeRelatedForm extends React.Component {
       if (err) {
         return;
       }
-
-      // Should format date value before submit.
       const values = {
         ...fieldsValue,
-        'date-picker': fieldsValue['date-picker'].format('YYYY-MM-DD')
+        'date': fieldsValue['date'].format('YYYY-MM-DD')
       };
       console.log('Received values of form: ', values);
+      API.saveFormData(values).then(response => console.log(values))
     });
   }
   render() {
@@ -42,9 +40,9 @@ class TimeRelatedForm extends React.Component {
       <Form onSubmit={this.handleSubmit}>
         <FormItem
           {...formItemLayout}
-          label="DatePicker"
+          label="Date"
         >
-          {getFieldDecorator('date-picker', config)(
+          {getFieldDecorator('date', config)(
             <DatePicker />
           )}
         </FormItem>
@@ -52,10 +50,27 @@ class TimeRelatedForm extends React.Component {
           {...formItemLayout}
           label="Gestation"
         >
-          {getFieldDecorator('input-number', { initialValue: 40 })(
+          {getFieldDecorator('gestationWeeks', { initialValue: 40 })(
             <InputNumber min={22} max={42} />
           )}
-          <span className="ant-form-text"> weeks</span>
+          <span className="ant-form-text"> weeks </span>
+        </FormItem>
+        <FormItem
+          {...formItemLayout}
+          label="sampleId"
+        >
+          {getFieldDecorator('sampleId')(
+            <Input />
+          )}
+        </FormItem>
+        <FormItem
+          {...formItemLayout}
+          label="PlacentaWeight"
+        >
+          {getFieldDecorator('placentaWeight', { initialValue: 500 })(
+                <InputNumber min={0} />
+          )}
+          <span className="ant-form-text"> grams </span>
         </FormItem>
         <FormItem
           wrapperCol={{
