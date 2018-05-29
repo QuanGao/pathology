@@ -31,6 +31,10 @@ import { Table, Icon, Divider } from 'antd';
     title: 'Placenta Weight',
     dataIndex: 'placentaWeight',
     key: 'placentaWeight',
+  }, {
+    title: 'Condition',
+    dataIndex: 'placentaWtCondition',
+    key: 'placentaWtCondition',
   }];
   
 const DataTable = (props) => <Table dataSource={props.data} columns={columns} />

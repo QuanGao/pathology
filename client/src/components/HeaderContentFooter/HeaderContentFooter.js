@@ -12,12 +12,13 @@ class HeaderContentFooter extends React.Component {
     handleMenuClick = (event) => {
         this.setState({activeKey: event.key})
     };
+
     renderContent = (key) => {
         switch(key){
             case "1":
                 return <PathForm/>;
-            // case "2":
-            //     return <GaWtTable/>;
+            case "2":
+                return <h1>Search</h1>;
             case "3":
                 return <AllForm/>;
             default:
@@ -36,7 +37,7 @@ class HeaderContentFooter extends React.Component {
                 style={{ lineHeight: '64px' }}
             >
                 <Menu.Item onClick={this.handleMenuClick} key="1">Add</Menu.Item>
-                <Menu.Item onClick={this.handleMenuClick} key="2">Edit</Menu.Item>
+                <Menu.Item onClick={this.handleMenuClick} key="2">Search</Menu.Item>
                 <Menu.Item onClick={this.handleMenuClick} key="3">All Data</Menu.Item>
             </Menu>
             </Header>
