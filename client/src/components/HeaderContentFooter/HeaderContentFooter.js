@@ -3,6 +3,9 @@ import "./HeaderContentFooter.css"
 import { Layout, Menu, Breadcrumb } from 'antd';
 import PathForm from "../PathForm"
 import AllForm from "../AllForm"
+import SearchBar from "../SearchBar"
+
+
 
 const { Header, Content, Footer } = Layout;
 class HeaderContentFooter extends React.Component {
@@ -18,7 +21,7 @@ class HeaderContentFooter extends React.Component {
             case "1":
                 return <PathForm/>;
             case "2":
-                return <h1>Search</h1>;
+                return <SearchBar/>;
             case "3":
                 return <AllForm/>;
             default:

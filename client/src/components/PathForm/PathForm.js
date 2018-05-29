@@ -51,7 +51,7 @@ class TimeRelatedForm extends React.Component {
         };
         
          
-        {return this.state.submitted? <Report data={this.state.submittedData}/>:
+        return this.state.submitted? <Report data={this.state.submittedData}/>:
         (<Form onSubmit={this.handleSubmit}>
             <FormItem
             {...formItemLayout}
@@ -96,7 +96,6 @@ class TimeRelatedForm extends React.Component {
             <Button type="primary" htmlType="submit">Submit</Button>
             </FormItem>
         </Form>)
-        };
     }
 }
 
