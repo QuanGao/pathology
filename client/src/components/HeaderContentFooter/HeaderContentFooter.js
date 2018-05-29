@@ -55,7 +55,7 @@ class HeaderContentFooter extends React.Component {
             </div>
             </Content>
             <Footer style={{ textAlign: 'center' }}>
-            Ant Design ©2016 Created by Ant UED
+            Bla bla bla ©2018 Created by bla bla
             </Footer>
         </Layout>
     )}
