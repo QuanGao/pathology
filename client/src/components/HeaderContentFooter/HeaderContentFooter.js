@@ -10,7 +10,7 @@ import SearchBar from "../SearchBar"
 const { Header, Content, Footer } = Layout;
 class HeaderContentFooter extends React.Component {
     state = {
-        activeKey: "1"
+        activeKey: "2"
     }
     handleMenuClick = (event) => {
         this.setState({activeKey: event.key})
@@ -19,9 +19,9 @@ class HeaderContentFooter extends React.Component {
     renderContent = (key) => {
         switch(key){
             case "1":
-                return <PathForm/>;
-            case "2":
                 return <SearchBar/>;
+            case "2":               
+                return <PathForm/>;
             case "3":
                 return <AllForm/>;
             default:
@@ -39,8 +39,8 @@ class HeaderContentFooter extends React.Component {
                 defaultSelectedKeys={['2']}
                 style={{ lineHeight: '64px' }}
             >
-                <Menu.Item onClick={this.handleMenuClick} key="1">Add</Menu.Item>
-                <Menu.Item onClick={this.handleMenuClick} key="2">Search</Menu.Item>
+                <Menu.Item onClick={this.handleMenuClick} key="1">Search</Menu.Item>
+                <Menu.Item onClick={this.handleMenuClick} key="2">Add</Menu.Item>
                 <Menu.Item onClick={this.handleMenuClick} key="3">All Data</Menu.Item>
             </Menu>
             </Header>
