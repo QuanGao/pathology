@@ -12,5 +12,10 @@ module.exports = {
         db.Form.create(req.body)
         .then(dbForm => res.json(dbForm))
         .catch(err => res.json(err))
+    },
+    findall: (req, res) => {
+        db.Form.find({})
+        .then(dbForms => res.json(dbForms))
+        .catch(err => res.json(err))
     }
 }
