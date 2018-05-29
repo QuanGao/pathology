@@ -9,8 +9,8 @@ const FormItem = Form.Item;
 class TimeRelatedForm extends React.Component {
 
     state = {
-        submitted: false,
-        submittedData: []
+        submitted:false,
+        submittedData: null
     }
     handleSubmit = (e) => {
         e.preventDefault();
@@ -27,8 +27,8 @@ class TimeRelatedForm extends React.Component {
         API.saveFormData(values).then(response => {
             console.log(values);
             this.setState({
-                submitted:true,
-                submittedData:values
+                submittedData:values,
+                submitted: true
             })
         })
         });
@@ -50,9 +50,9 @@ class TimeRelatedForm extends React.Component {
         rules: [{ type: 'object', required: true, message: 'Please select time!' }],
         };
         
-        {return this.state.submitted?<Report data = {this.state.submittedData}/>:
-        (
-        <Form onSubmit={this.handleSubmit}>
+         
+        {return this.state.submitted? <Report data={this.state.submittedData}/>:
+        (<Form onSubmit={this.handleSubmit}>
             <FormItem
             {...formItemLayout}
             label="Date"
@@ -95,8 +95,8 @@ class TimeRelatedForm extends React.Component {
             >
             <Button type="primary" htmlType="submit">Submit</Button>
             </FormItem>
-        </Form>
-        )};
+        </Form>)
+        };
     }
 }
 

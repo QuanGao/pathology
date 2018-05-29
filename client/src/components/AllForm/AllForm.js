@@ -2,7 +2,7 @@ import React from "react"
 import DataTable from "../DataTable"
 
 import API from "../../utils/API"
-import determinGaWtCondition from "../../utils/determinGaWtCondition.js"
+import GaWtCal from "../../utils/GaWtCal.js"
 // import PlacentaGaWtStds from "../../data/PlacentaGaWt"
 
 // const age = [22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42]
@@ -20,7 +20,7 @@ class AllForm extends React.Component {
                 tableData.forEach((obj, i) => {
                     obj.key = i;
                     obj.date = obj.date.split("T")[0]
-                    obj.placentaWtCondition = determinGaWtCondition(obj.gestationWeeks, obj.placentaWeight)
+                    obj.placentaWtCondition = GaWtCal.judge(obj.gestationWeeks, obj.placentaWeight)
                 })
                 console.log(tableData)
                 this.setState({
