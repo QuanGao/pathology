@@ -30,7 +30,12 @@ class TimeRelatedForm extends React.Component {
         })
         });
     }
-
+    validateGestationWeeks = (rule, value, cb) =>{
+        if( value <22 || value >42) {
+            cb("Please put in a valid number")
+        }
+        cb()
+    }
     render() {
         const { getFieldDecorator } = this.props.form;
         const formItemLayout = {
@@ -46,16 +51,21 @@ class TimeRelatedForm extends React.Component {
         const config = {
         rules: [{ type: 'object', required: true, message: 'Please select time!' }],
         };
-        
-         
+             
         return this.state.submitted? <Report data={this.state.submittedData}/>:
         (<Form onSubmit={this.handleSubmit}>
             <FormItem
             {...formItemLayout}
             label="Gestation"
             >
-            {getFieldDecorator('gestationWeeks', { initialValue: 40 })(
-                <InputNumber min={22} max={42} />
+            {getFieldDecorator('gestationWeeks', {
+                rules:[{
+                    required: true, message: "Gestation week can not be blank"
+                },{
+                    validator: this.validateGestationWeeks
+                }]
+            })(
+                <InputNumber/>
             )}
             <span className="ant-form-text"> weeks </span>
             </FormItem>

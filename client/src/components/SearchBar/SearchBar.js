@@ -78,11 +78,6 @@ class AdvancedSearchForm extends React.Component {
 const WrappedAdvancedSearchForm = Form.create()(AdvancedSearchForm);
 const SearchBar = () => 
     <div>
-        <WrappedAdvancedSearchForm />
-        {/* {this.state.searchSubmit && 
-        <div className="search-result-list">
-            <Report data = {this.state.searchResult}/>
-        </div>} */}
-        
+        <WrappedAdvancedSearchForm />        
     </div>
 export default SearchBar
