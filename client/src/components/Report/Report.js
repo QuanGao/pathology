@@ -12,7 +12,7 @@ const Report = (props)=>(
             Placental weight: {props.data.placentaWeight} grams
         </p>
         <p>
-            {GaWtCal.judge(props.data.gestationWeeks, props.data.placentaWeight)} for gestational age
+            {GaWtCal.judge(props.data.gestationWeeks, props.data.placentaWeight)} gestational age
             expect ({GaWtCal.lowWgt(props.data.gestationWeeks, props.data.placentaWeight)} to {GaWtCal.highWgt(props.data.gestationWeeks, props.data.placentaWeight)} grams)
         </p>
     </div>

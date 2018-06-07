@@ -4,19 +4,19 @@ const high = [285, 262, 252, 299, 281, 332, 321, 352, 433, 417, 436, 446, 479, 5
 
 
 function judge (weeks, wgt) {
-    const placentaAgeIndex = age.indexOf(weeks)
-    return wgt < low[placentaAgeIndex] ? "small" : (
-        wgt > high[placentaAgeIndex] ? "large" : "normal"
+    const placentaAgeIndex = age.indexOf(Math.floor(weeks))
+    return wgt < low[placentaAgeIndex] ? "small for" : (
+        wgt > high[placentaAgeIndex] ? "large for" : ""
     )
 }
 
 function lowWgt (weeks, wgt) {
-    const placentaAgeIndex = age.indexOf(weeks)
+    const placentaAgeIndex = age.indexOf(Math.floor(weeks))
     return low[placentaAgeIndex] 
 }
 
 function highWgt (weeks, wgt) {
-    const placentaAgeIndex = age.indexOf(weeks)
+    const placentaAgeIndex = age.indexOf(Math.floor(weeks))
     return high[placentaAgeIndex] 
 }
 

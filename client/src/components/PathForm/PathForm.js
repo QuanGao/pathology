@@ -19,10 +19,7 @@ class TimeRelatedForm extends React.Component {
         if (err) {
             return;
         }
-        const values = {
-            ...fieldsValue,
-            'date': fieldsValue['date'].format('YYYY-MM-DD')
-        };
+        const values = {...fieldsValue};    
         console.log('Received values of form: ', values);
         API.saveFormData(values).then(response => {
             console.log(values);
@@ -53,14 +50,6 @@ class TimeRelatedForm extends React.Component {
          
         return this.state.submitted? <Report data={this.state.submittedData}/>:
         (<Form onSubmit={this.handleSubmit}>
-            <FormItem
-            {...formItemLayout}
-            label="Date"
-            >
-            {getFieldDecorator('date', config)(
-                <DatePicker />
-            )}
-            </FormItem>
             <FormItem
             {...formItemLayout}
             label="Gestation"
