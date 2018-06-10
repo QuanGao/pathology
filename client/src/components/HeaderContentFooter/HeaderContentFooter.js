@@ -4,30 +4,69 @@ import { Layout, Menu, Breadcrumb } from 'antd';
 import PathForm from "../PathForm"
 import AllForm from "../AllForm"
 import SearchBar from "../SearchBar"
-
-
+import API from "../../utils/API"
+import Report from "../Report"
+import moment from "moment"
+import GaWtCal from "../../utils/GaWtCal.js"
 
 const { Header, Content, Footer } = Layout;
 class HeaderContentFooter extends React.Component {
     state = {
-        activeKey: "2"
+        activeKey: "2",
+        submittedData: null,
+        submitted: false,
+        allData: []
     }
-    handleMenuClick = (event) => {
-        this.setState({activeKey: event.key})
+    handleMenuClick = (event) => {     
+        this.setState({
+            activeKey: event.key,
+            submittedData: null,
+            submitted: false
+        })
     };
 
     renderContent = (key) => {
+        console.log("click")
         switch(key){
             case "1":
                 return <SearchBar/>;
             case "2":               
-                return <PathForm/>;
+                return this.state.submitted? <Report data={this.state.submittedData}/>:
+                <PathForm saveForm = {this.saveForm}/>
             case "3":
-                return <AllForm/>;
+                return <AllForm data={this.state.allData}/>;
             default:
                 return <h1>Default</h1>
         }
+    };
+
+    saveForm = (values)=> {
+        API.saveFormData(values).then(response => {
+            console.log(values);
+            this.setState({
+                submittedData:values,
+                submitted: true
+            })
+        })
+    };
+
+    getAllData = () => {
+        API.findAllForms().then(
+            response => {
+                const tableData = [...response.data]
+                tableData.forEach((obj, i) => {
+                    obj.key = i;
+                    obj.date = obj.createdAt.split("T")[0]
+                    obj.placentaWtCondition = GaWtCal.judge(obj.gestationWeeks, obj.placentaWeight)
+                })
+                console.log(tableData)
+                this.setState({
+                    allData: tableData
+                })
+            }
+        )
     }
+
     render () {
         return (
         <Layout>
@@ -45,10 +84,8 @@ class HeaderContentFooter extends React.Component {
             </Menu>
             </Header>
             <Content style={{ padding: '0 50px', marginTop: 64 }}>
-            <Breadcrumb style={{ margin: '16px 0' }}>
-                <Breadcrumb.Item>Home</Breadcrumb.Item>
-                <Breadcrumb.Item>List</Breadcrumb.Item>
-                <Breadcrumb.Item>App</Breadcrumb.Item>
+            <Breadcrumb style={{ margin: '16px 0'}}>
+                <Breadcrumb.Item>{moment().format("MMMM Do YYYY, h:mm:ss a")}</Breadcrumb.Item>
             </Breadcrumb>
             <div style={{ background: '#fff', padding: 24, minHeight: 380 }}>
                 {this.renderContent(this.state.activeKey)}
