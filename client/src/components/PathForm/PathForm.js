@@ -76,7 +76,7 @@ class TimeRelatedForm extends React.Component {
 
             <div>
                 <h4>Acute inflammatory pathology</h4>
-                <h6 style={{fontStyle:"italic"}}>Membranes</h6>
+                <h5 style={{fontStyle:"italic"}}>Membranes</h5>
             </div>
             
             <FormItem 

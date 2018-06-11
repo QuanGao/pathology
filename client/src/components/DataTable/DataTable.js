@@ -9,7 +9,7 @@ import { Table} from 'antd';
     key: 'sampleId',
   }, {
     title: 'Date',
-    dataIndex: 'date',
+    dataIndex: 'createdAt',
     key: 'date',
   }, {
     title: 'Gestation Weeks',

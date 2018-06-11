@@ -33,7 +33,7 @@ class HeaderContentFooter extends React.Component {
                 return this.state.submitted? <Report data={this.state.submittedData}/>:
                 <PathForm saveForm = {this.saveForm}/>
             case "3":
-                return <AllForm data={this.state.allData}/>;
+                return <AllForm data={this.state.allData}/>;          
             default:
                 return <h1>Default</h1>
         }
@@ -41,15 +41,19 @@ class HeaderContentFooter extends React.Component {
 
     saveForm = (values)=> {
         API.saveFormData(values).then(response => {
+            const allForms = [...this.state.allData]
+            allForms.push(response.data)
+            console.log(allForms)
             this.setState({
                 submittedData:values,
-                submitted: true
-            })
+                submitted: true,
+                allData: allForms 
+            }, () => console.log("headcontentfooter.js 51",this.state.allData,))
         })
     };
 
     getAllData = () => {
-        API.findAllForms().then(
+        return API.findAllForms().then(
             response => {
                 const tableData = [...response.data]
                 tableData.forEach((obj, i) => {
@@ -64,9 +68,11 @@ class HeaderContentFooter extends React.Component {
             }
         )
     }
-    componentDidMount() {
-        this.getAllData()
+
+    componentDidMount () {
+        this.getAllData();
     }
+
     render () {
         return (
         <Layout>
