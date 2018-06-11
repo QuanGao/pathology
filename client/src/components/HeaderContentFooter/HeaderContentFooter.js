@@ -26,7 +26,6 @@ class HeaderContentFooter extends React.Component {
     };
 
     renderContent = (key) => {
-        console.log("click")
         switch(key){
             case "1":
                 return <SearchBar/>;
@@ -66,7 +65,9 @@ class HeaderContentFooter extends React.Component {
             }
         )
     }
-
+    componentDidMount() {
+        this.getAllData()
+    }
     render () {
         return (
         <Layout>
