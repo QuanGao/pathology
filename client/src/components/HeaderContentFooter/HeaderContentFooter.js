@@ -1,12 +1,12 @@
 import React from "react"
 import "./HeaderContentFooter.css"
-import { Layout, Menu, Breadcrumb } from 'antd';
+import { Layout, Menu} from 'antd';
 import PathForm from "../PathForm"
 import AllForm from "../AllForm"
 import SearchBar from "../SearchBar"
 import API from "../../utils/API"
 import Report from "../Report"
-import moment from "moment"
+// import moment from "moment"
 import GaWtCal from "../../utils/GaWtCal.js"
 
 const { Header, Content, Footer } = Layout;
@@ -41,7 +41,6 @@ class HeaderContentFooter extends React.Component {
 
     saveForm = (values)=> {
         API.saveFormData(values).then(response => {
-            console.log(values);
             this.setState({
                 submittedData:values,
                 submitted: true
@@ -84,11 +83,13 @@ class HeaderContentFooter extends React.Component {
                 <Menu.Item onClick={this.handleMenuClick} key="3">All Data</Menu.Item>
             </Menu>
             </Header>
-            <Content style={{ padding: '0 50px', marginTop: 64 }}>
-            <Breadcrumb style={{ margin: '16px 0'}}>
-                <Breadcrumb.Item>{moment().format("MMMM Do YYYY, h:mm:ss a")}</Breadcrumb.Item>
-            </Breadcrumb>
-            <div style={{ background: '#fff', padding: 24, minHeight: 380 }}>
+            <Content style={{ padding: '0 50px', marginTop: 120 }}>
+            <div style={{background: '#fff', 
+            padding: 50, 
+            minHeight: 380, 
+            maxWidth:800,
+            margin:"auto"
+            }}>
                 {this.renderContent(this.state.activeKey)}
             </div>
             </Content>

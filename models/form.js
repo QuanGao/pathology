@@ -15,6 +15,9 @@ const FormSchema = new Schema({
     placentaWeight: {
         type: Number
     },
+    membranesMIR: {
+        type: String
+    }
 }, {
     timestamps: true
 })

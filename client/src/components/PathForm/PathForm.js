@@ -1,20 +1,15 @@
 import React from "react"
-import API from "../../utils/API"
 import "./PathForm.css"
-import Report from "../Report"
 
-import { Form, DatePicker, Button,InputNumber, Input } from 'antd';
+
+import { Divider, Select, Form, Button,InputNumber, Input } from 'antd';
 const FormItem = Form.Item;
-const InputGroup = Input.Group;
+const Option = Select.Option;
 class TimeRelatedForm extends React.Component {
 
-    // state = {
-    //     submitted:false,
-    //     submittedData: null
-    // }
     handleSubmit = (e) => {
         e.preventDefault();
-
+        console.log(this.props.form)
         this.props.form.validateFields((err, fieldsValue) => {
         if (err) {
             return;
@@ -22,13 +17,6 @@ class TimeRelatedForm extends React.Component {
         const values = {...fieldsValue};    
         console.log('Received values of form: ', values);
         this.props.saveForm(values);
-        // API.saveFormData(values).then(response => {
-        //     console.log(values);
-        //     this.setState({
-        //         submittedData:values,
-        //         submitted: true
-        //     })
-        // })
         });
     }
     validateGestationWeeks = (rule, value, cb) =>{
@@ -37,41 +25,26 @@ class TimeRelatedForm extends React.Component {
         }
         cb()
     };
-    validateGestationDays = (rule, value, cb) =>{
-        if( value <0 || value >7) {
-            cb("Please put in a valid number")
-        }
-        cb()
-    };
+
     render() {
         const { getFieldDecorator } = this.props.form;
-        const formItemLayout = {
-        labelCol: {
-            xs: { span: 24 },
-            sm: { span: 8 },
-        },
-        wrapperCol: {
-            xs: { span: 24 },
-            sm: { span: 16 },
-        },
-        };
-       
-        // return this.state.submitted? <Report data={this.state.submittedData}/>:
         
-        // (<Form onSubmit={this.handleSubmit}>
+
         return <Form onSubmit={this.handleSubmit}>
 
-            <FormItem
-            {...formItemLayout}
+            <FormItem           
             label="Sample ID"
             >
-            {getFieldDecorator('sampleId')(
+            {getFieldDecorator('sampleId',{
+                rules:[{
+                    required: true, message: "Sample ID can not be blank"
+                }]
+            })(
                 <Input />
             )}
             </FormItem>
 
-            <FormItem     
-            {...formItemLayout}
+            <FormItem            
             label="Gestation weeks"
             >
             {getFieldDecorator('gestationWeeks', {
@@ -86,26 +59,58 @@ class TimeRelatedForm extends React.Component {
             <span className="ant-form-text" style={{fontStyle:"italic"}}> (weeks.days) </span>
             </FormItem>
 
-            <FormItem
-            {...formItemLayout}
+            <FormItem            
             label="Placenta Weight"
             >
-            {getFieldDecorator('placentaWeight', { initialValue: 500 })(
-                    <InputNumber min={0} />
+            {getFieldDecorator('placentaWeight', { initialValue: 500,
+                rules:[{
+                    required: true, message: "Placenta Weight can not be blank"
+                }] 
+            })(
+                <InputNumber min={0} />
             )}
             <span className="ant-form-text"> grams </span>
             </FormItem>
+
+            <Divider/>
+
+            <div>
+                <h4>Acute inflammatory pathology</h4>
+                <h6 style={{fontStyle:"italic"}}>Membranes</h6>
+            </div>
+            
+            <FormItem 
+            label="Maternal immune response"
+            style={{maxWidth:400}}
+            >
+            {getFieldDecorator('membranesMIR', {
+                rules: [
+                  { required: true, message: 'Please select Maternal immune response' },
+                ],
+                initialValue: "None"
+              })(
+                <Select>
+                  <Option value="None">0 –None</Option>
+                  <Option value="Stage 1 Subchorionitis">Stage 1 –Subchorionitis</Option>
+                  <Option value="Stage 2 Chorionitis">Stage 2 –Chorionitis</Option>
+                  <Option value="Stage 2 –Amnionitis">Stage 2 –Amnionitis</Option>
+                  <Option value="Stage 3 -Amnionitis with necrosis">Stage 3 –Amnionitis with necrosis</Option>
+                </Select>
+              )}
+            </FormItem>
+
 
             <FormItem
             wrapperCol={{
                 xs: { span: 24, offset: 0 },
                 sm: { span: 16, offset: 8 },
             }}
+            style={{maxWidth:400, margin:"auto"}}
             >
             <Button type="primary" htmlType="submit">Submit</Button>
             </FormItem>
     
-        {/* </Form>) */}
+
         </Form>
     }
 }

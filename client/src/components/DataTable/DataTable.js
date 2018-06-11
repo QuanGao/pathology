@@ -1,20 +1,8 @@
 import React from "react"
 import "./DataTable.css"
 
-import { Table, Icon, Divider } from 'antd';
+import { Table} from 'antd';
 
-// const dataSource = [{
-//     key: '1',
-//     name: 'Mike',
-//     age: 32,
-//     address: '10 Downing Street'
-//   }, {
-//     key: '2',
-//     name: 'John',
-//     age: 42,
-//     address: '10 Downing Street'
-//   }];
-  
   const columns = [{
     title: 'SampleId',
     dataIndex: 'sampleId',
@@ -32,9 +20,13 @@ import { Table, Icon, Divider } from 'antd';
     dataIndex: 'placentaWeight',
     key: 'placentaWeight',
   }, {
-    title: 'Condition',
+    title: 'Placent weight/weeks',
     dataIndex: 'placentaWtCondition',
     key: 'placentaWtCondition',
+  },{
+    title: 'membranesMIR',
+    dataIndex: 'membranesMIR',
+    key: 'membranesMIR',
   }];
   
 const DataTable = (props) => <Table dataSource={props.data} columns={columns} />
