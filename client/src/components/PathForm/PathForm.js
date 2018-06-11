@@ -9,7 +9,6 @@ class TimeRelatedForm extends React.Component {
 
     handleSubmit = (e) => {
         e.preventDefault();
-        console.log(this.props.form)
         this.props.form.validateFields((err, fieldsValue) => {
         if (err) {
             return;

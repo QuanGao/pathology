@@ -6,7 +6,6 @@ import AllForm from "../AllForm"
 import SearchBar from "../SearchBar"
 import API from "../../utils/API"
 import Report from "../Report"
-// import moment from "moment"
 import GaWtCal from "../../utils/GaWtCal.js"
 
 const { Header, Content, Footer } = Layout;
@@ -43,12 +42,11 @@ class HeaderContentFooter extends React.Component {
         API.saveFormData(values).then(response => {
             const allForms = [...this.state.allData]
             allForms.push(response.data)
-            console.log(allForms)
             this.setState({
                 submittedData:values,
                 submitted: true,
                 allData: allForms 
-            }, () => console.log("headcontentfooter.js 51",this.state.allData,))
+            })
         })
     };
 
@@ -61,7 +59,6 @@ class HeaderContentFooter extends React.Component {
                     obj.date = obj.createdAt.split("T")[0]
                     obj.placentaWtCondition = GaWtCal.judge(obj.gestationWeeks, obj.placentaWeight)
                 })
-                console.log(tableData)
                 this.setState({
                     allData: tableData
                 })
