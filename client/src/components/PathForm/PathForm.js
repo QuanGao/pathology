@@ -93,8 +93,8 @@ class TimeRelatedForm extends React.Component {
                   <Option value="None">0 –None</Option>
                   <Option value="Stage 1 Subchorionitis">Stage 1 –Subchorionitis</Option>
                   <Option value="Stage 2 Chorionitis">Stage 2 –Chorionitis</Option>
-                  <Option value="Stage 2 –Amnionitis">Stage 2 –Amnionitis</Option>
-                  <Option value="Stage 3 -Amnionitis with necrosis">Stage 3 –Amnionitis with necrosis</Option>
+                  <Option value="Stage 2 Amnionitis">Stage 2 –Amnionitis</Option>
+                  <Option value="Stage 3 Amnionitis with necrosis">Stage 3 –Amnionitis with necrosis</Option>
                 </Select>
               )}
             </FormItem>
