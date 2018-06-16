@@ -41,7 +41,11 @@ class HeaderContentFooter extends React.Component {
     saveForm = (values)=> {
         API.saveFormData(values).then(response => {
             const allForms = [...this.state.allData]
-            allForms.push(response.data)
+            const savedForm = response.data
+            savedForm.key =  allForms.length;
+            savedForm.date = savedForm.createdAt.split("T")[0]
+            savedForm.placentaWtCondition = GaWtCal.judge(savedForm.gestationWeeks, savedForm.placentaWeight)
+            allForms.push(savedForm)
             this.setState({
                 submittedData:values,
                 submitted: true,
