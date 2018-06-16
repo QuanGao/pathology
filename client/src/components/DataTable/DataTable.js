@@ -4,7 +4,7 @@ import "./DataTable.css"
 import { Table} from 'antd';
 
   const columns = [{
-    title: 'SampleId',
+    title: 'id',
     dataIndex: 'sampleId',
     key: 'sampleId',
   }, {
@@ -27,6 +27,10 @@ import { Table} from 'antd';
     title: 'membranesMIR',
     dataIndex: 'membranesMIR',
     key: 'membranesMIR',
+  },{
+    title: 'chorionicPlateMIR',
+    dataIndex: 'chorionicPlateMIR',
+    key: 'chorionicPlateMIR',
   }];
   
 const DataTable = (props) => <Table dataSource={props.data} columns={columns} />
