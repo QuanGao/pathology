@@ -46,7 +46,7 @@ class TimeRelatedForm extends React.Component {
             <FormItem            
             label="Gestation weeks"
             >
-            {getFieldDecorator('gestationWeeks', {
+            {getFieldDecorator('gestationWeeks', { initialValue: 40,
                 rules:[{
                     required: true, message: "Gestation week can not be blank"
                 },{
@@ -73,10 +73,8 @@ class TimeRelatedForm extends React.Component {
 
             <Divider/>
 
-            <div>
-                <h4>Acute inflammatory pathology</h4>
-                <h5 style={{fontStyle:"italic"}}>Membranes</h5>
-            </div>
+            <h4>Acute inflammatory pathology</h4>
+            <h5 style={{fontStyle:"italic"}}>Membranes</h5>
             
             <FormItem 
             label="Maternal immune response"
@@ -84,7 +82,7 @@ class TimeRelatedForm extends React.Component {
             >
             {getFieldDecorator('membranesMIR', {
                 rules: [
-                  { required: true, message: 'Please select Maternal immune response' },
+                  { required: true, message: 'Please select Maternal immune response for membranes' },
                 ],
                 initialValue: "None"
               })(
@@ -97,6 +95,41 @@ class TimeRelatedForm extends React.Component {
                 </Select>
               )}
             </FormItem>
+
+            <h5 style={{fontStyle:"italic"}}>Chorionic plate</h5>
+            <FormItem 
+            label="Maternal immune response"
+            style={{maxWidth:400}}
+            >
+            {getFieldDecorator('chorionicPlateMIR', {
+                rules: [
+                  { required: true, message: 'Please select maternal immune response for chorionic plate' },
+                ],
+                initialValue: "None"
+              })(
+                <Select>
+                  <Option value="None">0 –None</Option>
+                  <Option value="Stage 1 Subchorionitis">Stage 1 –Subchorionitis</Option>
+                  <Option value="Stage 2 Chorionitis">Stage 2 –Chorionitis</Option>
+                  <Option value="Stage 2 Amnionitis">Stage 2 –Amnionitis</Option>
+                  <Option value="Stage 3 Amnionitis with necrosis">Stage 3 –Amnionitis with necrosis</Option>
+                </Select>
+              )}
+            </FormItem>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
             <FormItem

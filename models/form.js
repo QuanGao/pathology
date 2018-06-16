@@ -17,6 +17,9 @@ const FormSchema = new Schema({
     },
     membranesMIR: {
         type: String
+    },
+    chorionicPlateMIR: {
+        type: String
     }
 }, {
     timestamps: true
