@@ -18,9 +18,12 @@ const Report = (props)=>(
         <p>
             {MIR.getMIRstage(props.data.membranesMIR, props.data.chorionicPlateMIR)}
         </p>
-        {/* <p>
-            {MIR.getMIRstage(props.data.membranesMIR, props.data.chorionicPlateMIR)}
-        </p> */}
+        <p className="secondaryP">
+            {MIR.getMIRinfo(props.data.membranesMIR, "Membranes")}
+        </p>
+        <p className="secondaryP">
+            {MIR.getMIRinfo(props.data.chorionicPlateMIR, "Chorionic plate")}
+        </p>
     </div>
 )
 
