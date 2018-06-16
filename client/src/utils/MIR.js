@@ -6,7 +6,7 @@ function getMIRstage (mems, cp) {
 }
 
 function getMIRinfo (str, region) {
-    return str === "None"? "":`${region} with ${str.split(" ")[2]}`
+    return str === "None"? "":`${region} with ${str.replace(/^Stage [0-9] /,"")}`
 }
 
 
