@@ -18,9 +18,15 @@ const FormSchema = new Schema({
     membranesMIR: {
         type: String
     },
+    umbilicalCordFIR: {
+        type: String
+    },
     chorionicPlateMIR: {
         type: String
-    }
+    },
+    chorionicPlateFIR: {
+        type: String
+    },
 }, {
     timestamps: true
 })

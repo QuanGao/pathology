@@ -15,8 +15,14 @@ const Report = (props)=>(
             {GaWtCal.judge(props.data.gestationWeeks, props.data.placentaWeight)} gestational age
             expect ({GaWtCal.lowWgt(props.data.gestationWeeks, props.data.placentaWeight)} to {GaWtCal.highWgt(props.data.gestationWeeks, props.data.placentaWeight)} grams)
         </p>
+
+        <h5>{MIR.getIRstage([props.data.membranesMIR, props.data.chorionicPlateMIR, 
+            props.data.umbilicalCordFIR, props.data.chorionicPlateFIR])===0?
+            "":"Acute inflammatory pathology"}</h5>
         <p>
-            {MIR.getMIRstage(props.data.membranesMIR, props.data.chorionicPlateMIR)}
+            {MIR.getIRstage([props.data.membranesMIR, props.data.chorionicPlateMIR])===0?
+            "":`Maternal immune response, stage${MIR.getIRstage([props.data.membranesMIR, props.data.chorionicPlateMIR])}`
+                }
         </p>
         <p className="secondaryP">
             {MIR.getMIRinfo(props.data.membranesMIR, "Membranes")}
@@ -24,6 +30,9 @@ const Report = (props)=>(
         <p className="secondaryP">
             {MIR.getMIRinfo(props.data.chorionicPlateMIR, "Chorionic plate")}
         </p>
+
+
+
     </div>
 )
 

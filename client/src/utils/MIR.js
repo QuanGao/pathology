@@ -1,13 +1,17 @@
-function getMIRstage (mems, cp) {
-    const memsStage = mems === "None"? 0:mems.split(" ")[1]
-    const cpStage = cp === "None"? 0:cp.split(" ")[1]
-    const stage = Math.max(memsStage, cpStage)
-    return stage === 0? "":`Maternal immune response stage ${stage}`
+
+function getStageForEachInput (input) {
+    return +input.split(" ")[0]
+}
+
+function getIRstage (arr) {
+    const stages = arr.map(input=>getStageForEachInput(input))
+    console.log(stages)
+    return Math.max(...stages)
 }
 
 function getMIRinfo (str, region) {
-    return str === "None"? "":`${region} with ${str.replace(/^Stage [0-9] /,"")}`
+    return str === "0"? "":`${region} with ${str.replace(/^[0-9] /,"")}`
 }
 
 
-module.exports = {getMIRstage, getMIRinfo}
+module.exports = {getIRstage, getMIRinfo}

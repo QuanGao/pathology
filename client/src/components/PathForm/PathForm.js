@@ -84,13 +84,13 @@ class TimeRelatedForm extends React.Component {
                 rules: [
                   { required: true, message: 'Please select maternal immune response for membranes' },
                 ],
-                initialValue: "None"
+                initialValue: "0"
               })(
                 <Select>
-                  <Option value="None">0 –None</Option>
-                  <Option value="Stage 1 Subchorionitis">Stage 1 –Subchorionitis</Option>
-                  <Option value="Stage 2 Chorionitis">Stage 2 –Chorioamnionitis</Option>
-                  <Option value="Stage 3 Amnionitis with necrosis">Stage 3 –Amnionitis with necrosis</Option>
+                  <Option value="0">0 –None</Option>
+                  <Option value="1 Subchorionitis">1 –Subchorionitis</Option>
+                  <Option value="2 Chorionitis">2 –Chorioamnionitis</Option>
+                  <Option value="3 Amnionitis with necrosis">3 –Amnionitis with necrosis</Option>
                 </Select>
               )}
             </FormItem>
@@ -105,15 +105,15 @@ class TimeRelatedForm extends React.Component {
                 rules: [
                   { required: true, message: 'Please select fetal immune response for umbilical cord' },
                 ],
-                initialValue: "None"
+                initialValue: "0"
               })(
                 <Select>
-                  <Option value="None">0 –None</Option>
-                  <Option value="Stage 1 Phlebitis">Stage 1 –Phlebitis</Option>
-                  <Option value="Stage 2 Arteritis">Stage 2 –Arteritis</Option>
-                  <Option value="Stage 2 Pan-vasculitis">Stage 2 –Pan-vasculitis</Option>
-                  <Option value="Stage 2 Funisitis">Stage 2 –Funisitis</Option>
-                  <Option value="Stage 3 Necrotizing funisitis">Stage 3 –Necrotizing funisitis</Option>
+                  <Option value="0">0 –None</Option>
+                  <Option value="1 Phlebitis">1 –Phlebitis</Option>
+                  <Option value="2 Arteritis">2 –Arteritis</Option>
+                  <Option value="2 Pan-vasculitis">2 –Pan-vasculitis</Option>
+                  <Option value="2 Funisitis">2 –Funisitis</Option>
+                  <Option value="3 Necrotizing funisitis">3 –Necrotizing funisitis</Option>
                 </Select>
               )}
             </FormItem>
@@ -127,13 +127,13 @@ class TimeRelatedForm extends React.Component {
                 rules: [
                   { required: true, message: 'Please select maternal immune response for chorionic plate' },
                 ],
-                initialValue: "None"
+                initialValue: "0"
               })(
                 <Select>
-                  <Option value="None">0 –None</Option>
-                  <Option value="Stage 1 Subchorionitis">Stage 1 –Subchorionitis</Option>
-                  <Option value="Stage 2 Chorioamnionitis">Stage 2 –Chorioamnionitis</Option>
-                  <Option value="Stage 3 Amnionitis with necrosis">Stage 3 –Amnionitis with necrosis</Option>
+                  <Option value="0">0 –None</Option>
+                  <Option value="1 Subchorionitis">1 –Subchorionitis</Option>
+                  <Option value="2 Chorioamnionitis">2 –Chorioamnionitis</Option>
+                  <Option value="3 Amnionitis with necrosis">3 –Amnionitis with necrosis</Option>
                 </Select>
               )}
             </FormItem>
@@ -145,11 +145,11 @@ class TimeRelatedForm extends React.Component {
                 rules: [
                   { required: true, message: 'Please select fetal immune response for chorionic plate' },
                 ],
-                initialValue: "None"
+                initialValue: "0"
               })(
                 <Select>
-                  <Option value="None">0 –None</Option>
-                  <Option value="Stage 1 Chorionic vasculitis">Stage 1 –Chorionic vasculitis</Option>
+                  <Option value="0">0 –None</Option>
+                  <Option value="1 Chorionic vasculitis">1 –Chorionic vasculitis</Option>
                 </Select>
               )}
             </FormItem>
