@@ -82,16 +82,38 @@ class TimeRelatedForm extends React.Component {
             >
             {getFieldDecorator('membranesMIR', {
                 rules: [
-                  { required: true, message: 'Please select Maternal immune response for membranes' },
+                  { required: true, message: 'Please select maternal immune response for membranes' },
                 ],
                 initialValue: "None"
               })(
                 <Select>
                   <Option value="None">0 –None</Option>
                   <Option value="Stage 1 Subchorionitis">Stage 1 –Subchorionitis</Option>
-                  <Option value="Stage 2 Chorionitis">Stage 2 –Chorionitis</Option>
-                  <Option value="Stage 2 Amnionitis">Stage 2 –Amnionitis</Option>
+                  <Option value="Stage 2 Chorionitis">Stage 2 –Chorioamnionitis</Option>
                   <Option value="Stage 3 Amnionitis with necrosis">Stage 3 –Amnionitis with necrosis</Option>
+                </Select>
+              )}
+            </FormItem>
+
+            <h5 style={{fontStyle:"italic"}}>Umbilical cord</h5>
+            
+            <FormItem 
+            label="Fetal immune response"
+            style={{maxWidth:400}}
+            >
+            {getFieldDecorator('umbilicalCordFIR', {
+                rules: [
+                  { required: true, message: 'Please select fetal immune response for umbilical cord' },
+                ],
+                initialValue: "None"
+              })(
+                <Select>
+                  <Option value="None">0 –None</Option>
+                  <Option value="Stage 1 Phlebitis">Stage 1 –Phlebitis</Option>
+                  <Option value="Stage 2 Arteritis">Stage 2 –Arteritis</Option>
+                  <Option value="Stage 2 Pan-vasculitis">Stage 2 –Pan-vasculitis</Option>
+                  <Option value="Stage 2 Funisitis">Stage 2 –Funisitis</Option>
+                  <Option value="Stage 3 Necrotizing funisitis">Stage 3 –Necrotizing funisitis</Option>
                 </Select>
               )}
             </FormItem>
@@ -110,9 +132,24 @@ class TimeRelatedForm extends React.Component {
                 <Select>
                   <Option value="None">0 –None</Option>
                   <Option value="Stage 1 Subchorionitis">Stage 1 –Subchorionitis</Option>
-                  <Option value="Stage 2 Chorionitis">Stage 2 –Chorionitis</Option>
-                  <Option value="Stage 2 Amnionitis">Stage 2 –Amnionitis</Option>
+                  <Option value="Stage 2 Chorioamnionitis">Stage 2 –Chorioamnionitis</Option>
                   <Option value="Stage 3 Amnionitis with necrosis">Stage 3 –Amnionitis with necrosis</Option>
+                </Select>
+              )}
+            </FormItem>
+            <FormItem 
+            label="Fetal immune response"
+            style={{maxWidth:400}}
+            >
+            {getFieldDecorator('chorionicPlateFIR', {
+                rules: [
+                  { required: true, message: 'Please select fetal immune response for chorionic plate' },
+                ],
+                initialValue: "None"
+              })(
+                <Select>
+                  <Option value="None">0 –None</Option>
+                  <Option value="Stage 1 Chorionic vasculitis">Stage 1 –Chorionic vasculitis</Option>
                 </Select>
               )}
             </FormItem>
