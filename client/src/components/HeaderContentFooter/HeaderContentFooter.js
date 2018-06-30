@@ -28,7 +28,8 @@ class HeaderContentFooter extends React.Component {
         switch(key){
             case "1":
                 return <SearchBar/>;
-            case "2":               
+            case "2":
+                console.log(this.state.submittedData)               
                 return this.state.submitted? <Report data={this.state.submittedData}/>:
                 <PathForm saveForm = {this.saveForm}/>
             case "3":
