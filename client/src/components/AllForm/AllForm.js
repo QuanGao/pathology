@@ -1,6 +1,5 @@
 import React from "react"
 import DataTable from "../DataTable"
-// import moment from "moment"
 
 const addKeyToList = (arr) => {
     arr.map((item, index) => {

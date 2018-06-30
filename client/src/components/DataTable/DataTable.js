@@ -11,28 +11,38 @@ import { Table} from 'antd';
     title: 'Date',
     dataIndex: 'createdAt',
     key: 'date',
-  }, {
-    title: 'Gestation Weeks',
-    dataIndex: 'gestationWeeks',
-    key: 'gestationWeeks',
-  }, {
-    title: 'Placenta Weight',
-    dataIndex: 'placentaWeight',
-    key: 'placentaWeight',
-  }, {
-    title: 'Placent weight/weeks',
-    dataIndex: 'placentaWtCondition',
-    key: 'placentaWtCondition',
   },{
     title: 'membranesMIR',
     dataIndex: 'membranesMIR',
     key: 'membranesMIR',
   },{
+    title: 'umbilicalCordFIR',
+    dataIndex: 'umbilicalCordFIR',
+    key: 'umbilicalCordFIR',
+  },{
     title: 'chorionicPlateMIR',
     dataIndex: 'chorionicPlateMIR',
     key: 'chorionicPlateMIR',
+  },{
+    title: 'chorionicPlateFIR',
+    dataIndex: 'chorionicPlateFIR',
+    key: 'chorionicPlateFIR',
   }];
   
 const DataTable = (props) => <Table dataSource={props.data} columns={columns} />
 
 export default DataTable
+
+// {
+//     title: 'Gestation Weeks',
+//     dataIndex: 'gestationWeeks',
+//     key: 'gestationWeeks',
+//   }, {
+//     title: 'Placenta Weight',
+//     dataIndex: 'placentaWeight',
+//     key: 'placentaWeight',
+//   }, {
+//     title: 'Placent weight/weeks',
+//     dataIndex: 'placentaWtCondition',
+//     key: 'placentaWtCondition',
+//   },
