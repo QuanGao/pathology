@@ -18,13 +18,18 @@ class TimeRelatedForm extends React.Component {
         this.props.saveForm(values);
         });
     }
-    validateGestationWeeks = (rule, value, cb) =>{
+    validateGestationWeeks = (rule, value, cb) => {
         if( value <22 || value >42) {
             cb("Please put in a valid number")
         }
         cb()
     };
-
+    validateplacentaWeight = (rule, value, cb) => {
+        if( value <0) {
+            cb("Please put in a valid number")
+        }
+        cb()
+    }
     render() {
         const { getFieldDecorator } = this.props.form;
         
@@ -64,9 +69,11 @@ class TimeRelatedForm extends React.Component {
             {getFieldDecorator('placentaWeight', { initialValue: 500,
                 rules:[{
                     required: true, message: "Placenta Weight can not be blank"
-                }] 
+                },{
+                    validator: this.validateplacentaWeight
+                }]
             })(
-                <InputNumber min={0} />
+                <InputNumber/>
             )}
             <span className="ant-form-text"> grams </span>
             </FormItem>
