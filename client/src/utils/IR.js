@@ -21,13 +21,13 @@ function getMIRstage (data) {
 function getIRdetails (param, name) {
     const stage = getStageForEachInput(param)
     const detail = param.replace(/^[0-9] /,"")
-    return stage >0 ? `${name} with ${detail}` :""
+    return stage >0 ? `${name} with acute ${detail}` :""
 }
 
 function getIRdetailsWOnames (param) {
     const stage = getStageForEachInput(param)
     const detail = param.replace(/^[0-9] /,"")
-    return stage >0 ? detail:""
+    return stage >0 ? `Acute ${detail}`:""
 }
 
 function getFIRstage (data) {
