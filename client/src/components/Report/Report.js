@@ -5,7 +5,7 @@ import IR from "../../utils/IR"
 const Report = (props)=>(
     <div>
         <h1>Report for sample {props.data.sampleId}</h1>
-        <p>
+        {/* <p>
             Gestation duration: {props.data.gestationWeeks} weeks
         </p>
         <p>
@@ -32,6 +32,10 @@ const Report = (props)=>(
         </p>
         <p className="thirdP">
             {IR.getIRdetailsWOnames(props.data.chorionicPlateFIR)}
+        </p> */}
+        
+        <p>
+            {props.data.villitisLargestFocus}
         </p>
     </div>
 )

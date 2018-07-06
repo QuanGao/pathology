@@ -3,9 +3,9 @@ function getStageForEachInput (input) {
     return +input.split(" ")[0]
 }
 
-function getDetailForEachInput (input) {
-    return input.replace(/^[0-9] /,"")
-}
+// function getDetailForEachInput (input) {
+//     return input.replace(/^[0-9] /,"")
+// }
 
 function getMaxIRstage (arr) {
     const stages = arr.map(input=>getStageForEachInput(input))

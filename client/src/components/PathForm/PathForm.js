@@ -2,11 +2,13 @@ import React from "react"
 import "./PathForm.css"
 
 
-import { Divider, Select, Form, Button,InputNumber, Input } from 'antd';
+import { Divider, Select, Form, Button,InputNumber, Input, Slider } from 'antd';
 const FormItem = Form.Item;
 const Option = Select.Option;
 class TimeRelatedForm extends React.Component {
-
+    state = {
+        VillousDiscCV: "0"
+    };
     handleSubmit = (e) => {
         e.preventDefault();
         this.props.form.validateFields((err, fieldsValue) => {
@@ -29,7 +31,13 @@ class TimeRelatedForm extends React.Component {
             cb("Please put in a valid number")
         }
         cb()
-    }
+    };
+    handleVillousDiscCVchange = (value) => {
+        console.log("wowo" + value)
+        this.setState({
+            VillousDiscCV: value
+        }, ()=>console.log(this.state.VillousDiscCV))
+    };
     render() {
         const { getFieldDecorator } = this.props.form;
         
@@ -48,13 +56,11 @@ class TimeRelatedForm extends React.Component {
             )}
             </FormItem>
 
-            <FormItem            
+            {/* <FormItem            
             label="Gestation weeks"
             >
             {getFieldDecorator('gestationWeeks', { initialValue: 40,
                 rules:[{
-                    required: true, message: "Gestation week can not be blank"
-                },{
                     validator: this.validateGestationWeeks
                 }]
             })(
@@ -68,8 +74,6 @@ class TimeRelatedForm extends React.Component {
             >
             {getFieldDecorator('placentaWeight', { initialValue: 500,
                 rules:[{
-                    required: true, message: "Placenta Weight can not be blank"
-                },{
                     validator: this.validateplacentaWeight
                 }]
             })(
@@ -88,9 +92,6 @@ class TimeRelatedForm extends React.Component {
             style={{maxWidth:400}}
             >
             {getFieldDecorator('membranesMIR', {
-                rules: [
-                  { required: true, message: 'Please select maternal immune response for membranes' },
-                ],
                 initialValue: "0"
               })(
                 <Select>
@@ -109,9 +110,6 @@ class TimeRelatedForm extends React.Component {
             style={{maxWidth:400}}
             >
             {getFieldDecorator('umbilicalCordFIR', {
-                rules: [
-                  { required: true, message: 'Please select fetal immune response for umbilical cord' },
-                ],
                 initialValue: "0"
               })(
                 <Select>
@@ -131,9 +129,6 @@ class TimeRelatedForm extends React.Component {
             style={{maxWidth:400}}
             >
             {getFieldDecorator('chorionicPlateMIR', {
-                rules: [
-                  { required: true, message: 'Please select maternal immune response for chorionic plate' },
-                ],
                 initialValue: "0"
               })(
                 <Select>
@@ -149,9 +144,6 @@ class TimeRelatedForm extends React.Component {
             style={{maxWidth:400}}
             >
             {getFieldDecorator('chorionicPlateFIR', {
-                rules: [
-                  { required: true, message: 'Please select fetal immune response for chorionic plate' },
-                ],
                 initialValue: "0"
               })(
                 <Select>
@@ -160,8 +152,91 @@ class TimeRelatedForm extends React.Component {
                 </Select>
               )}
             </FormItem>
+            
+            <Divider/>
+            <h4>Villitis</h4>
+            <h5 style={{fontStyle:"italic"}}>Membranes</h5>
+            
+            <FormItem 
+            label="Chronic marginating choriodeciduitis"
+            style={{maxWidth:400}}
+            >
+            {getFieldDecorator('villitisMembranesCMC', {
+                initialValue: "0"
+              })(
+                <Select>
+                  <Option value="0">No</Option>
+                  <Option value="Chronic marginating choriodeciduitis">Yes</Option>
+                </Select>
+              )}
+            </FormItem>
+
+            <h5 style={{fontStyle:"italic"}}>Chorionic plate</h5>
+            
+            <FormItem 
+            label="Chronic chorionitis"
+            style={{maxWidth:400}}
+            >
+            {getFieldDecorator('villitisChorionicPlateCC', {
+                initialValue: "0"
+              })(
+                <Select>
+                  <Option value="0">No</Option>
+                  <Option value="Chronic chorionitis">Yes</Option>
+                </Select>
+              )}
+            </FormItem>
+
+            <FormItem 
+            label="Eosinophilic T-cell vasculitis"
+            style={{maxWidth:400}}
+            >
+            {getFieldDecorator('villitisChorionicPlateETV', {
+                initialValue: "0"
+              })(
+                <Select>
+                  <Option value="0">No</Option>
+                  <Option value="Subchorionitis">Yes</Option>
+                </Select>
+              )}
+            </FormItem> */}
+
+            <h5 style={{fontStyle:"italic"}}>Villous disc</h5>
+            <FormItem 
+            label="Chronic villitis"
+            style={{maxWidth:400}}
+            >
+            {getFieldDecorator('villousDiscCV', {
+                initialValue: "0"
+              })(
+                <Select onChange ={this.handleVillousDiscCVchange}>
+                  <Option value="0">No</Option>
+                  <Option value="Chronic villitis">Yes</Option>
+                </Select>
+              )}
+            </FormItem>
+
+            {this.state.VillousDiscCV !=="0" && 
+            <section className="villousDiscCV-details">              
+              <FormItem 
+                label="Villitis–largest focus"
+                style={{maxWidth:400}}
+                >
+                {getFieldDecorator('villitisLargestFocus', {
+                    initialValue: 0
+                })(
+                    <Slider 
+                    style={{maxWidth:400}}
+                    />
+                )}
+                </FormItem>
 
 
+
+
+ 
+
+            </section>}
 
 
 
