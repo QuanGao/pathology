@@ -2,9 +2,12 @@ import React from "react"
 import "./PathForm.css"
 
 
-import { Divider, Select, Form, Button,InputNumber, Input, Slider } from 'antd';
+import { Divider, Select, Form, Button,InputNumber, Input, Slider, Checkbox } from 'antd';
 const FormItem = Form.Item;
 const Option = Select.Option;
+const CheckboxGroup = Checkbox.Group
+const villitisLocationOptions = [ "parabasal", "paraseptal", "mid parenchymal", "subchorionic"];
+
 class TimeRelatedForm extends React.Component {
     state = {
         VillousDiscCV: "0"
@@ -38,6 +41,15 @@ class TimeRelatedForm extends React.Component {
             VillousDiscCV: value
         }, ()=>console.log(this.state.VillousDiscCV))
     };
+
+
+
+    onChange = (checkedValues) => {
+        console.log('checked = ', checkedValues);
+      }
+
+
+
     render() {
         const { getFieldDecorator } = this.props.form;
         
@@ -231,7 +243,33 @@ class TimeRelatedForm extends React.Component {
                 )}
                 </FormItem>
 
-
+                <FormItem 
+                label="Villitis–largest focus"
+                style={{maxWidth:400}}
+                >
+                {getFieldDecorator('villitisNumOfFoci', {
+                    initialValue: "None"
+                })(
+                <Select>
+                    <Option value="None">None</Option>
+                    <Option value="Single">Single</Option>
+                    <Option value="Few">Few</Option>
+                    <Option value="Many">Many</Option>
+                    <Option value="Diffuse">Diffuse</Option>
+                </Select>
+                )}
+                </FormItem>
+            
+                <FormItem 
+                label="Location"
+                style={{maxWidth:800}}
+                >
+                {getFieldDecorator('villitisLocation')(
+                    <CheckboxGroup 
+                    options={villitisLocationOptions} 
+                    onChange={this.onChange} />
+                )}
+                </FormItem>
 
 
  
