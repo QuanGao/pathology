@@ -9,9 +9,9 @@ import {Table} from 'antd';
     key: 'sampleId',
   },
     {
-    title: 'villitisMembranesCM',
-    dataIndex: 'villitisMembranesCM',
-    key: 'villitisMembranesCM',
+    title: 'villitisMembranesCMC',
+    dataIndex: 'villitisMembranesCMC',
+    key: 'villitisMembranesCMC',
   }, {
     title: 'villitisChorionicPlateCC',
     dataIndex: 'villitisChorionicPlateCC',
