@@ -16,6 +16,7 @@ class TimeRelatedForm extends React.Component {
         e.preventDefault();
         this.props.form.validateFields((err, fieldsValue) => {
         if (err) {
+            console.log("err: "+err)
             return;
         }
         const values = {...fieldsValue};    
@@ -39,7 +40,7 @@ class TimeRelatedForm extends React.Component {
         console.log("handlevildisc cv change: " + value)
         this.setState({
             VillousDiscCV: value
-        }, ()=>console.log(this.state.VillousDiscCV))
+        }, ()=>console.log("state.VillousDiscCV: "+this.state.VillousDiscCV))
     };
 
 

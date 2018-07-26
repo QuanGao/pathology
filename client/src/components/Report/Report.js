@@ -37,6 +37,11 @@ const Report = (props)=>(
         
         <p>
         villousDiscCV:{props.data.villousDiscCV}
+        </p>
+        <p>
+        villitisLargestFocus:{props.data.villitisLargestFocus}
+        </p>
+        <p>
         deciduaCDwPC:{props.data.deciduaCDwPC}
         </p>
     </div>

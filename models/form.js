@@ -43,7 +43,7 @@ const FormSchema = new Schema({
         type: Number
     },
     villitisNumOfFoci: {
-        type: Number
+        type: String
     },
     villitisLocation: {
         type: Array

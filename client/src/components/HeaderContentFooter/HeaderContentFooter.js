@@ -40,9 +40,13 @@ class HeaderContentFooter extends React.Component {
     };
 
     saveForm = (values)=> {
+        console.log("values line 43 in headercontentFooter: ",values)
         API.saveFormData(values).then(response => {
             const allForms = [...this.state.allData]
             const savedForm = response.data
+
+            console.log("saved form line 48 in headercontentFooter: ", savedForm)
+            
             savedForm.key =  allForms.length;
             // savedForm.date = savedForm.createdAt.split("T")[0]
             savedForm.placentaWtCondition = GaWtCal.judge(savedForm.gestationWeeks, savedForm.placentaWeight)
