@@ -10,7 +10,7 @@ const villitisLocationOptions = [ "parabasal", "paraseptal", "mid parenchymal", 
 
 class TimeRelatedForm extends React.Component {
     state = {
-        VillousDiscCV: "0"
+        VillousDiscCV: 0
     };
     handleSubmit = (e) => {
         e.preventDefault();
@@ -36,7 +36,7 @@ class TimeRelatedForm extends React.Component {
         cb()
     };
     handleVillousDiscCVchange = (value) => {
-        console.log("wowo" + value)
+        console.log("handlevildisc cv change: " + value)
         this.setState({
             VillousDiscCV: value
         }, ()=>console.log(this.state.VillousDiscCV))
@@ -68,7 +68,7 @@ class TimeRelatedForm extends React.Component {
             )}
             </FormItem>
 
-            {/* <FormItem            
+            <FormItem            
             label="Gestation weeks"
             >
             {getFieldDecorator('gestationWeeks', { initialValue: 40,
@@ -165,7 +165,7 @@ class TimeRelatedForm extends React.Component {
               )}
             </FormItem>
             
-            <Divider/>
+            <Divider/> 
             <h4>Villitis</h4>
             <h5 style={{fontStyle:"italic"}}>Membranes</h5>
             
@@ -174,11 +174,11 @@ class TimeRelatedForm extends React.Component {
             style={{maxWidth:400}}
             >
             {getFieldDecorator('villitisMembranesCMC', {
-                initialValue: "0"
+                initialValue: 0
               })(
                 <Select>
-                  <Option value="0">No</Option>
-                  <Option value="Chronic marginating choriodeciduitis">Yes</Option>
+                  <Option value={0}>No</Option>
+                  <Option value={1}>Yes</Option>
                 </Select>
               )}
             </FormItem>
@@ -190,11 +190,11 @@ class TimeRelatedForm extends React.Component {
             style={{maxWidth:400}}
             >
             {getFieldDecorator('villitisChorionicPlateCC', {
-                initialValue: "0"
+                initialValue: 0
               })(
                 <Select>
-                  <Option value="0">No</Option>
-                  <Option value="Chronic chorionitis">Yes</Option>
+                  <Option value={0}>No</Option>
+                  <Option value={1}>Yes</Option>
                 </Select>
               )}
             </FormItem>
@@ -204,14 +204,14 @@ class TimeRelatedForm extends React.Component {
             style={{maxWidth:400}}
             >
             {getFieldDecorator('villitisChorionicPlateETV', {
-                initialValue: "0"
+                initialValue: 0
               })(
                 <Select>
-                  <Option value="0">No</Option>
-                  <Option value="Subchorionitis">Yes</Option>
+                  <Option value={0}>No</Option>
+                  <Option value={1}>Yes</Option>
                 </Select>
               )}
-            </FormItem> */}
+            </FormItem> 
 
             <h5 style={{fontStyle:"italic"}}>Villous disc</h5>
             <FormItem 
@@ -219,16 +219,16 @@ class TimeRelatedForm extends React.Component {
             style={{maxWidth:400}}
             >
             {getFieldDecorator('villousDiscCV', {
-                initialValue: "0"
+                initialValue: 0
               })(
                 <Select onChange ={this.handleVillousDiscCVchange}>
-                  <Option value="0">No</Option>
-                  <Option value="Chronic villitis">Yes</Option>
+                  <Option value={0}>No</Option>
+                  <Option value={1}>Yes</Option>
                 </Select>
               )}
             </FormItem>
 
-            {this.state.VillousDiscCV !=="0" && 
+            {this.state.VillousDiscCV !==0 && 
             <section className="villousDiscCV-details">              
               <FormItem 
                 label="Villitis–largest focus"
@@ -244,7 +244,7 @@ class TimeRelatedForm extends React.Component {
                 </FormItem>
 
                 <FormItem 
-                label="Villitis–largest focus"
+                label="Villitis – number of foci"
                 style={{maxWidth:400}}
                 >
                 {getFieldDecorator('villitisNumOfFoci', {
@@ -271,23 +271,94 @@ class TimeRelatedForm extends React.Component {
                 )}
                 </FormItem>
 
+              <FormItem 
+                label="Associated avascular villi"
+                style={{maxWidth:400}}
+                >
+                {getFieldDecorator('villitisAVA', {
+                    initialValue: 0
+                })(
+                    <Slider 
+                    style={{maxWidth:400}}
+                    />
+                )}
+                </FormItem>
 
- 
+                <FormItem 
+                label="Associated stem vessel obliterative changes"
+                style={{maxWidth:400}}
+                >
+                {getFieldDecorator('villitisASVOC', {
+                    initialValue: 0
+                })(
+                    <Select>
+                    <Option value={0}>No</Option>
+                    <Option value={1}>Yes</Option>
+                    </Select>
+                )}
+                </FormItem>
+                
+                <FormItem 
+                label="Viral inclusions"
+                style={{maxWidth:400}}
+                >
+                {getFieldDecorator('villitisVI', {
+                    initialValue: 0
+                })(
+                    <Select>
+                    <Option value={0}>No</Option>
+                    <Option value={1}>Yes</Option>
+                    </Select>
+                )}
+                </FormItem>
+
+                <FormItem 
+                label="CMV immunostain"
+                style={{maxWidth:400}}
+                >
+                {getFieldDecorator('villitisCMV_I', {
+                    initialValue: "NA"
+                })(
+                    <Select>
+                    <Option value="NA">Not done</Option>
+                    <Option value="negative">Negative</Option>
+                    <Option value="positive">Positive</Option>
+                    </Select>
+                )}
+                </FormItem>
+
+                <FormItem 
+                label="Toxoplasma immunostain"
+                style={{maxWidth:400}}
+                >
+                {getFieldDecorator('villitisT_I', {
+                    initialValue: "NA"
+                })(
+                    <Select>
+                    <Option value="NA">Not done</Option>
+                    <Option value="negative">Negative</Option>
+                    <Option value="positive">Positive</Option>
+                    </Select>
+                )}
+                </FormItem>
 
             </section>}
 
 
-
-
-
-
-
-
-
-
-
-
-
+            <h5 style={{fontStyle:"italic"}}>Decidua</h5>
+            <FormItem 
+            label="Chronic deciduitis with plasma cells"
+            style={{maxWidth:400}}
+            >
+            {getFieldDecorator('deciduaCDwPC', {
+                initialValue: 0
+              })(
+                <Select>
+                  <Option value={0}>No</Option>
+                  <Option value={1}>Yes</Option>
+                </Select>
+              )}
+            </FormItem>
 
             <FormItem
             wrapperCol={{
@@ -298,7 +369,7 @@ class TimeRelatedForm extends React.Component {
             >
             <Button type="primary" htmlType="submit">Submit</Button>
             </FormItem>
-    
+
 
         </Form>
     }

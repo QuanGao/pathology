@@ -44,4 +44,10 @@ function checkIRpresence (data) {
 }
 
 
-module.exports = {checkIRpresence, getMIRstage,getFIRstage,getIRdetails,getIRdetailsWOnames}
+module.exports = {
+    checkIRpresence, 
+    getMIRstage,
+    getFIRstage,
+    getIRdetails,
+    getIRdetailsWOnames
+}

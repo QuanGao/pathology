@@ -27,6 +27,46 @@ const FormSchema = new Schema({
     chorionicPlateFIR: {
         type: String
     },
+    villitisMembranesCM: {
+        type: Number
+    },
+    villitisChorionicPlateCC: {
+        type: Number
+    },
+    villitisChorionicPlateETV: {
+        type: Number
+    },
+    villousDiscCV: {
+        type:  Number
+    },
+    villitisLargestFocus: {
+        type: Number
+    },
+    villitisNumOfFoci: {
+        type: Number
+    },
+    villitisLocation: {
+        type: Array
+    },
+    villitisAVA: {
+        type: Number
+    },
+    villitisASVOC: {
+        type: Number
+    },
+    villitisVI: {
+        type: Number
+    },
+    villitisCMV_I: {
+        type: String
+    },
+    villitisT_I: {
+        type: String
+    },
+    deciduaCDwPC: {
+        type:  Number
+    }
+
 }, {
     timestamps: true
 })

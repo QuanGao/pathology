@@ -29,7 +29,7 @@ class HeaderContentFooter extends React.Component {
             case "1":
                 return <SearchBar/>;
             case "2":
-                console.log(this.state.submittedData)               
+                console.log("submitted data", this.state.submittedData)               
                 return this.state.submitted? <Report data={this.state.submittedData}/>:
                 <PathForm saveForm = {this.saveForm}/>
             case "3":
@@ -44,7 +44,7 @@ class HeaderContentFooter extends React.Component {
             const allForms = [...this.state.allData]
             const savedForm = response.data
             savedForm.key =  allForms.length;
-            savedForm.date = savedForm.createdAt.split("T")[0]
+            // savedForm.date = savedForm.createdAt.split("T")[0]
             savedForm.placentaWtCondition = GaWtCal.judge(savedForm.gestationWeeks, savedForm.placentaWeight)
             allForms.push(savedForm)
             this.setState({
@@ -66,7 +66,7 @@ class HeaderContentFooter extends React.Component {
                 })
                 this.setState({
                     allData: tableData
-                })
+                }, ()=>console.log("this stata all data ",this.state.allData))
             }
         )
     }

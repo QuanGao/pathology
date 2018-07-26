@@ -2,10 +2,11 @@ import React from "react";
 import "./Report.css"
 import GaWtCal from "../../utils/GaWtCal.js"
 import IR from "../../utils/IR"
+
 const Report = (props)=>(
     <div>
         <h1>Report for sample {props.data.sampleId}</h1>
-        {/* <p>
+        <p>
             Gestation duration: {props.data.gestationWeeks} weeks
         </p>
         <p>
@@ -32,10 +33,11 @@ const Report = (props)=>(
         </p>
         <p className="thirdP">
             {IR.getIRdetailsWOnames(props.data.chorionicPlateFIR)}
-        </p> */}
+        </p>
         
         <p>
-            {props.data.villitisLargestFocus}
+        villousDiscCV:{props.data.villousDiscCV}
+        deciduaCDwPC:{props.data.deciduaCDwPC}
         </p>
     </div>
 )
