@@ -40,7 +40,7 @@ const FormSchema = new Schema({
         type:  Number
     },
     villitisLargestFocus: {
-        type: Number
+        type: String
     },
     villitisNumOfFoci: {
         type: String
@@ -49,7 +49,7 @@ const FormSchema = new Schema({
         type: Array
     },
     villitisAVA: {
-        type: Number
+        type: String
     },
     villitisASVOC: {
         type: Number

@@ -47,7 +47,7 @@ class TimeRelatedForm extends React.Component {
 
     onChange = (checkedValues) => {
         console.log('checked = ', checkedValues);
-      }
+    }
 
 
 
@@ -236,11 +236,20 @@ class TimeRelatedForm extends React.Component {
                 style={{maxWidth:400}}
                 >
                 {getFieldDecorator('villitisLargestFocus', {
-                    initialValue: 0
+                    initialValue: "None"
                 })(
-                    <Slider 
-                    style={{maxWidth:400}}
-                    />
+                    // <Slider 
+                    // style={{maxWidth:400}}
+                    // />
+                    <Select>
+                    <Option value="None">None</Option>
+                    <Option value="1-4">1-4</Option>
+                    <Option value="5-9">5-9</Option>
+                    <Option value="10-20">10-20</Option>
+                    <Option value="20-50">20-50</Option>
+                    <Option value="50-100">50-100</Option>
+                    <Option value=">100">>100</Option>
+                </Select>
                 )}
                 </FormItem>
 
@@ -277,11 +286,20 @@ class TimeRelatedForm extends React.Component {
                 style={{maxWidth:400}}
                 >
                 {getFieldDecorator('villitisAVA', {
-                    initialValue: 0
+                    initialValue: "None"
                 })(
-                    <Slider 
-                    style={{maxWidth:400}}
-                    />
+                    // <Slider 
+                    // style={{maxWidth:400}}
+                    // />
+                    <Select>
+                    <Option value="None">None</Option>
+                    <Option value="1-4">1-4</Option>
+                    <Option value="5-9">5-9</Option>
+                    <Option value="10-20">10-20</Option>
+                    <Option value="20-50">20-50</Option>
+                    <Option value="50-100">50-100</Option>
+                    <Option value=">100">>100</Option>
+                </Select>
                 )}
                 </FormItem>
 

@@ -33,10 +33,6 @@ import {Table} from 'antd';
     dataIndex: 'villitisNumOfFoci',
     key: 'villitisNumOfFoci',
   }, {
-    title: 'villitisLocation',
-    dataIndex: 'villitisLocation',
-    key: 'villitisLocation',
-  }, {
     title: 'villitisAVA',
     dataIndex: 'villitisAVA',
     key: 'villitisAVA',
@@ -101,5 +97,9 @@ export default DataTable
 //     title: 'Date',
 //     dataIndex: 'createdAt',
 //     key: 'date',
+//   }, {
+//     title: 'villitisLocation',
+//     dataIndex: 'villitisLocation',
+//     key: 'villitisLocation',
 //   }
 // ]
