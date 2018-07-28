@@ -40,7 +40,7 @@ function checkIRpresence (data) {
         data.chorionicPlateMIR,
         data.umbilicalCordFIR,
         data.chorionicPlateFIR])
-    return IRstage > 0 ?"Acute inflammatory pathology":""
+    return IRstage > 0
 }
 
 
