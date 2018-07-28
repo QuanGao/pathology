@@ -48,7 +48,7 @@ const FormSchema = new Schema({
     villitisLocation: {
         type: Array
     },
-    villitisAVA: {
+    villitisAAV: {
         type: String
     },
     villitisASVOC: {

@@ -71,14 +71,27 @@ const Report = (props)=>(
 
        {VI.isChronicVillitis(props.data) && 
        !VI.isSingle(props.data) && VI.isAbnormal(props.data) ?
-                 (<p><b>
-                     Associated features:
-                 </b></p>):""
+            (<div>                  
+                <p><b>Associated features: </b></p>
+                {props.data.villitisMembranesCMC === 1 && (<p>Chronic marginating choriodeciduitis</p>)}
+                {props.data.deciduaCDwPC === 1 && (<p>Chronic deciduitis with plasma cells.</p>)}
+                {props.data.villitisChorionicPlateCC === 1 && (<p>Chronic chorionitis.</p>)}
+                {props.data.villitisChorionicPlateETV === 1 && (<p>Eosinophilic/T-cell vasculitis.</p>)}
+                {props.data.villitisChorionicPlateETV !== "None" && (<p>Avascular villi.</p>)}
+                {props.data.villitisASVOC === 1 && (<p>Stem vessel obliterative changes.</p>)}
+                {props.data.villitisCMV_I !== "NA" && (
+                    <p> 
+                        {props.data.villitisVI  === 1 ? "":"No definitive"} viral inclusions identified.
+                        Immunoperoxidase stain for cytomegalovirus is {props.data.villitisCMV_I}
+                    </p>
+                    )} 
+                {props.data.villitisT_I !== "NA" && (<p>Immunoperoxidase stain for toxoplasmosis is {props.data.villitisT_I}</p>)}         
+            </div>):""
        }
     
         {!VI.isChronicVillitis(props.data) || VI.isSingle(props.data) ?
            (<div>
-                <p className="secondP">
+                <p>
                     {props.data.villitisMembranesCMC === 1 && 
                         "Chronic marginating choriodeciduitis."}
                 </p>
