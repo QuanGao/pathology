@@ -48,23 +48,32 @@ const Report = (props)=>(
             </p>)
        }
 
-       {!VI.isSingle(props.data) && VI.isChronicVillitis(props.data)?  
+       {VI.isChronicVillitis(props.data) && !VI.isSingle(props.data) ?  
             (<div>
                 <p>
                     Chronic villitis, {VI.isLowOrHigh(props.data)} grade
                 </p>
                 <p>
-                    Pattern: {VI.findPattern(props.data)}
+                    <b>Pattern: </b>{VI.findPattern(props.data)}
                 </p>
-                <p>
-                    Location: {props.data.villitisLocation}
-                </p>
-            </div>):"" 
+                {props.data.villitisLocation.length >0 && 
+                (<p><b>Location: </b>
+                    {props.data.villitisLocation.map(
+                        (item,index)=>{
+                            return index < props.data.villitisLocation.length-1?
+                            (<span>{item}, </span>):(<span>{item}</span>)
+                        })}
+                </p>) 
+                }
+            </div>
+            ):"" 
        }
-       {
-                 <p>
+
+       {VI.isChronicVillitis(props.data) && 
+       !VI.isSingle(props.data) && VI.isAbnormal(props.data) ?
+                 (<p><b>
                      Associated features:
-                 </p>
+                 </b></p>):""
        }
     
         {!VI.isChronicVillitis(props.data) || VI.isSingle(props.data) ?

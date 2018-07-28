@@ -21,13 +21,21 @@ function findPattern (data) {
         return isLow? "multifocal":"diffuse"
     }             
 }
-    
-function isNormal (data) {
-    
+   
+function isAbnormal (data) {
+    return data.villitisMembranesCMC === 1 ||
+    data.villitisChorionicPlateCC === 1 || 
+    data.villitisChorionicPlateETV === 1||
+    data.villitisCMV_I === "positive" ||
+    data.villitisT_I === "positive" ||
+    data.villitisASVOC === 1 ||
+    data.villitisVI  === 1 ||
+    data.deciduaCDwPC === 1
 }
 module.exports = {
     isChronicVillitis,
     isSingle,
     isLowOrHigh,
-    findPattern
+    findPattern,
+    isAbnormal
 }

@@ -20,7 +20,8 @@ class AdvancedSearchForm extends React.Component {
             result => this.setState({
                 searchResult: result.data, 
                 searchSubmit:true
-            }, ()=>console.log("state in search bar", this.state))
+            }, ()=>console.log("state in search bar", 
+            this.state.searchResult))
         )
     });
   }
