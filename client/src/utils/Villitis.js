@@ -22,6 +22,9 @@ function findPattern (data) {
     }             
 }
     
+function isNormal (data) {
+    
+}
 module.exports = {
     isChronicVillitis,
     isSingle,

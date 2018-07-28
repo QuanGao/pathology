@@ -40,12 +40,31 @@ const Report = (props)=>(
         </p> */}
 
         <Divider/>
-        
+
         {VI.isSingle(props.data) && 
             (<p>
                 Chronic villitis, single focus, ungradable, 
                 possible {VI.isLowOrHigh(props.data)} grade:
             </p>)
+       }
+
+       {!VI.isSingle(props.data) && VI.isChronicVillitis(props.data)?  
+            (<div>
+                <p>
+                    Chronic villitis, {VI.isLowOrHigh(props.data)} grade
+                </p>
+                <p>
+                    Pattern: {VI.findPattern(props.data)}
+                </p>
+                <p>
+                    Location: {props.data.villitisLocation}
+                </p>
+            </div>):"" 
+       }
+       {
+                 <p>
+                     Associated features:
+                 </p>
        }
     
         {!VI.isChronicVillitis(props.data) || VI.isSingle(props.data) ?
