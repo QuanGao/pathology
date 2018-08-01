@@ -8,7 +8,8 @@ function isSingle (data) {
 
 function isLowOrHigh (data) {
     let numOfVilli = 0
-    if(data.villitisLargestFocus!=="None"){
+    console.log("data.villitisLargestFocus"+data.villitisLargestFocus)
+    if(data.villitisLargestFocus && data.villitisLargestFocus!=="None"){
         numOfVilli = +data.villitisLargestFocus.split("-")[1]
     }
     return numOfVilli < 10 ? "low":"high"
