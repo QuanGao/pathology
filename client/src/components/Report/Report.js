@@ -52,7 +52,7 @@ const Report = (props)=>(
        {VI.isChronicVillitis(props.data) && !VI.isSingle(props.data) ?  
             (<div>
                 <p>
-                    Chronic villitis, {props.data.villitisLargestFocus!=="None" && VI.isLowOrHigh(props.data)} grade
+                    Chronic villitis, {VI.isLowOrHigh(props.data)} grade
                 </p>
                 <p>
                     Pattern: {VI.findPattern(props.data)}

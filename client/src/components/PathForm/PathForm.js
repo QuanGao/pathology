@@ -274,7 +274,9 @@ class TimeRelatedForm extends React.Component {
                 label="Location"
                 style={{maxWidth:800}}
                 >
-                {getFieldDecorator('villitisLocation')(
+                {getFieldDecorator('villitisLocation', {
+                    initialValue:[]
+                })(
                     <CheckboxGroup 
                     options={villitisLocationOptions} 
                     onChange={this.onChange} />
