@@ -7,7 +7,7 @@ import IR from "../../utils/IR"
 import VI from "../../utils/Villitis"
 const Report = (props)=>(
     <div>
-        <h1>Report for sample {props.data.sampleId}</h1>
+        <h1>Report for sample {props.data.sampleId.toUpperCase()}</h1>
         <p>
             Gestation duration: {props.data.gestationWeeks} weeks
         </p>
