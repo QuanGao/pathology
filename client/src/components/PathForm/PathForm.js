@@ -235,10 +235,11 @@ class TimeRelatedForm extends React.Component {
                 style={{maxWidth:400}}
                 >
                 {getFieldDecorator('villitisLargestFocus', {
-                    initialValue: "None"
+                    // initialValue: "None"
+                    initialValue:"1-4"
                 })(
                     <Select>
-                    <Option value="None">None</Option>
+                    {/* <Option value="None">None</Option> */}
                     <Option value="1-4">1-4</Option>
                     <Option value="5-9">5-9</Option>
                     <Option value="10-20">10-20</Option>

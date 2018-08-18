@@ -62,7 +62,7 @@ const Report = (props)=>(
                     {props.data.villitisLocation.map(
                         (item,index)=>{
                             return index < props.data.villitisLocation.length-1?
-                            (<span>{item}, </span>):(<span>{item}</span>)
+                            (<span> {item}, </span>):(<span> {item}</span>)
                         })}
                 </p>) 
                 }
