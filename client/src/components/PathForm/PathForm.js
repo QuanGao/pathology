@@ -130,7 +130,6 @@ class TimeRelatedForm extends React.Component {
                   <Option value="1 Phlebitis">1 –Phlebitis</Option>
                   <Option value="2 Arteritis">2 –Arteritis</Option>
                   <Option value="2 Pan-vasculitis">2 –Pan-vasculitis</Option>
-                  <Option value="2 Funisitis">2 –Funisitis</Option>
                   <Option value="3 Necrotizing funisitis">3 –Necrotizing funisitis</Option>
                 </Select>
               )}
@@ -287,20 +286,12 @@ class TimeRelatedForm extends React.Component {
                 label="Associated avascular villi"
                 style={{maxWidth:400}}
                 >
-                {getFieldDecorator('villitisAVA', {
-                    initialValue: "None"
+                {getFieldDecorator('villitisAAV', {
+                    initialValue: 0
                 })(
-                    // <Slider 
-                    // style={{maxWidth:400}}
-                    // />
                     <Select>
-                    <Option value="None">None</Option>
-                    <Option value="1-4">1-4</Option>
-                    <Option value="5-9">5-9</Option>
-                    <Option value="10-20">10-20</Option>
-                    <Option value="20-50">20-50</Option>
-                    <Option value="50-100">50-100</Option>
-                    <Option value=">100">>100</Option>
+                  <Option value={0}>No</Option>
+                  <Option value={1}>Yes</Option>
                 </Select>
                 )}
                 </FormItem>

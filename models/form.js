@@ -52,7 +52,7 @@ const FormSchema = new Schema({
         type: Array
     },
     villitisAAV: {
-        type: String
+        type: Number
     },
     villitisASVOC: {
         type: Number

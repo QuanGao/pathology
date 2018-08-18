@@ -33,9 +33,9 @@ import {Table} from 'antd';
     dataIndex: 'villitisNumOfFoci',
     key: 'villitisNumOfFoci',
   }, {
-    title: 'villitisAVA',
-    dataIndex: 'villitisAVA',
-    key: 'villitisAVA',
+    title: 'villitisAAV',
+    dataIndex: 'villitisAAV',
+    key: 'villitisAAV',
   }, {
     title: 'villitisASVOC',
     dataIndex: 'villitisASVOC',
