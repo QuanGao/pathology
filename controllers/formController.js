@@ -1,8 +1,9 @@
 const db = require("../models")
 module.exports = {
     findById: (req, res) => {
+        const sampleId = req.params.sampleId.toUpperCase()
         db.Form.findOne({
-            sampleId: req.params.sampleId
+            sampleId: sampleId
         })
         .then(dbForm => res.json(dbForm))
         .catch(err => res.json(err))

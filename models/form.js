@@ -7,7 +7,10 @@ const FormSchema = new Schema({
     },
     sampleId: {
         type: String,
-        unique: true
+        unique: true,
+        index: true,
+        trim: true,
+        uppercase: true
     },
     gestationWeeks: {
         type: Number
