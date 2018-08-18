@@ -27,12 +27,14 @@ function findPattern (data) {
 }
    
 function isAbnormal (data) {
+    console.log("data.villitisAAV"+data.villitisAAV)
     return data.villitisMembranesCMC === 1 ||
     data.villitisChorionicPlateCC === 1 || 
     data.villitisChorionicPlateETV === 1||
     data.villitisCMV_I === "positive" ||
     data.villitisT_I === "positive" ||
     data.villitisASVOC === 1 ||
+    data.villitisAAV === 1 ||
     data.villitisVI  === 1 ||
     data.deciduaCDwPC === 1
 }

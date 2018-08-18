@@ -79,7 +79,7 @@ const Report = (props)=>(
                     {props.data.deciduaCDwPC === 1 && (<li>Chronic deciduitis with plasma cells.</li>)}
                     {props.data.villitisChorionicPlateCC === 1 && (<li>Chronic chorionitis.</li>)}
                     {props.data.villitisChorionicPlateETV === 1 && (<li>Eosinophilic/T-cell vasculitis.</li>)}
-                    {props.data.villitisChorionicPlateETV !== "None" && (<li>Avascular villi.</li>)}
+                    {props.data.villitisAAV === 1 && (<li>Avascular villi.</li>)}
                     {props.data.villitisASVOC === 1 && (<li>Stem vessel obliterative changes.</li>)}
                     {props.data.villitisCMV_I !== "NA" && (
                         <li>
