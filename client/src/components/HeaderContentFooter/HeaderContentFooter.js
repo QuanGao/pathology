@@ -95,15 +95,15 @@ class HeaderContentFooter extends React.Component {
                 <Menu.Item onClick={this.handleMenuClick} key="3">All Data</Menu.Item>
             </Menu>
             </Header>
-            <Content style={{ padding: '0 50px', marginTop: 120 }}>
-            <div style={{background: '#fff', 
-            padding: 50, 
-            minHeight: 380, 
-            maxWidth: this.state.activeKey === "3"? 1400:800,
-            margin:"auto"
-            }}>
-                {this.renderContent(this.state.activeKey)}
-            </div>
+            <Content style={{ padding: '0 50px', marginTop: 120 }}>    
+                <div style={{background: '#fff', 
+                padding: 50, 
+                minHeight: 380, 
+                maxWidth: this.state.activeKey === "3"? 1400:800,
+                margin:"auto"
+                }}>
+                    {this.renderContent(this.state.activeKey)}
+                </div>
             </Content>
             <Footer style={{ textAlign: 'center' }}>
             Bla bla bla ©2018 Created by bla bla
