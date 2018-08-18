@@ -2,7 +2,9 @@ import React from "react"
 import "./PathForm.css"
 
 
-import { Divider, Select, Form, Button,InputNumber, Input, Slider, Checkbox } from 'antd';
+import { Divider, Select, Form, Button,InputNumber, Input, Radio, Checkbox } from 'antd';
+const RadioGroup = Radio.Group
+
 const FormItem = Form.Item;
 const Option = Select.Option;
 const CheckboxGroup = Checkbox.Group
@@ -36,24 +38,17 @@ class TimeRelatedForm extends React.Component {
         }
         cb()
     };
-    handleVillousDiscCVchange = (value) => {
-        console.log("handlevildisc cv change: " + value)
+    handleVillousDiscCVchange = (event) => {
         this.setState({
-            VillousDiscCV: value
+            VillousDiscCV: event.target.value
         }, ()=>console.log("state.VillousDiscCV: "+this.state.VillousDiscCV))
     };
-
-
-
     onChange = (checkedValues) => {
         console.log('checked = ', checkedValues);
     }
 
-
-
     render() {
         const { getFieldDecorator } = this.props.form;
-        
 
         return <Form onSubmit={this.handleSubmit}>
 
@@ -176,12 +171,13 @@ class TimeRelatedForm extends React.Component {
             {getFieldDecorator('villitisMembranesCMC', {
                 initialValue: 0
               })(
-                <Select>
-                  <Option value={0}>No</Option>
-                  <Option value={1}>Yes</Option>
-                </Select>
+                <RadioGroup>
+                    <Radio value={0}>No</Radio>
+                    <Radio value={1}>Yes</Radio>    
+                </RadioGroup>
               )}
             </FormItem>
+
 
             <h5 style={{fontStyle:"italic"}}>Chorionic plate</h5>
             
@@ -192,10 +188,10 @@ class TimeRelatedForm extends React.Component {
             {getFieldDecorator('villitisChorionicPlateCC', {
                 initialValue: 0
               })(
-                <Select>
-                  <Option value={0}>No</Option>
-                  <Option value={1}>Yes</Option>
-                </Select>
+                <RadioGroup>
+                    <Radio value={0}>No</Radio>
+                    <Radio value={1}>Yes</Radio>    
+                </RadioGroup>
               )}
             </FormItem>
 
@@ -206,10 +202,10 @@ class TimeRelatedForm extends React.Component {
             {getFieldDecorator('villitisChorionicPlateETV', {
                 initialValue: 0
               })(
-                <Select>
-                  <Option value={0}>No</Option>
-                  <Option value={1}>Yes</Option>
-                </Select>
+                <RadioGroup>
+                    <Radio value={0}>No</Radio>
+                    <Radio value={1}>Yes</Radio>    
+                </RadioGroup>
               )}
             </FormItem> 
 
@@ -221,10 +217,10 @@ class TimeRelatedForm extends React.Component {
             {getFieldDecorator('villousDiscCV', {
                 initialValue: 0
               })(
-                <Select onChange ={this.handleVillousDiscCVchange}>
-                  <Option value={0}>No</Option>
-                  <Option value={1}>Yes</Option>
-                </Select>
+                <RadioGroup onChange ={this.handleVillousDiscCVchange}>
+                    <Radio value={0}>No</Radio>
+                    <Radio value={1}>Yes</Radio>    
+                </RadioGroup>
               )}
             </FormItem>
 
@@ -235,11 +231,9 @@ class TimeRelatedForm extends React.Component {
                 style={{maxWidth:400}}
                 >
                 {getFieldDecorator('villitisLargestFocus', {
-                    // initialValue: "None"
                     initialValue:"1-4"
                 })(
                     <Select>
-                    {/* <Option value="None">None</Option> */}
                     <Option value="1-4">1-4</Option>
                     <Option value="5-9">5-9</Option>
                     <Option value="10-20">10-20</Option>
@@ -287,10 +281,10 @@ class TimeRelatedForm extends React.Component {
                 {getFieldDecorator('villitisAAV', {
                     initialValue: 0
                 })(
-                    <Select>
-                  <Option value={0}>No</Option>
-                  <Option value={1}>Yes</Option>
-                </Select>
+                <RadioGroup>
+                    <Radio value={0}>No</Radio>
+                    <Radio value={1}>Yes</Radio>    
+                </RadioGroup>
                 )}
                 </FormItem>
 
@@ -301,10 +295,10 @@ class TimeRelatedForm extends React.Component {
                 {getFieldDecorator('villitisASVOC', {
                     initialValue: 0
                 })(
-                    <Select>
-                    <Option value={0}>No</Option>
-                    <Option value={1}>Yes</Option>
-                    </Select>
+                <RadioGroup>
+                    <Radio value={0}>No</Radio>
+                    <Radio value={1}>Yes</Radio>    
+                </RadioGroup>
                 )}
                 </FormItem>
                 
@@ -315,10 +309,10 @@ class TimeRelatedForm extends React.Component {
                 {getFieldDecorator('villitisVI', {
                     initialValue: 0
                 })(
-                    <Select>
-                    <Option value={0}>No</Option>
-                    <Option value={1}>Yes</Option>
-                    </Select>
+                <RadioGroup>
+                    <Radio value={0}>No</Radio>
+                    <Radio value={1}>Yes</Radio>    
+                </RadioGroup>
                 )}
                 </FormItem>
 
@@ -330,9 +324,9 @@ class TimeRelatedForm extends React.Component {
                     initialValue: "NA"
                 })(
                     <Select>
-                    <Option value="NA">Not done</Option>
-                    <Option value="negative">Negative</Option>
-                    <Option value="positive">Positive</Option>
+                        <Option value="NA">Not done</Option>
+                        <Option value="negative">Negative</Option>
+                        <Option value="positive">Positive</Option>
                     </Select>
                 )}
                 </FormItem>
@@ -345,9 +339,9 @@ class TimeRelatedForm extends React.Component {
                     initialValue: "NA"
                 })(
                     <Select>
-                    <Option value="NA">Not done</Option>
-                    <Option value="negative">Negative</Option>
-                    <Option value="positive">Positive</Option>
+                        <Option value="NA">Not done</Option>
+                        <Option value="negative">Negative</Option>
+                        <Option value="positive">Positive</Option>
                     </Select>
                 )}
                 </FormItem>
@@ -363,10 +357,10 @@ class TimeRelatedForm extends React.Component {
             {getFieldDecorator('deciduaCDwPC', {
                 initialValue: 0
               })(
-                <Select>
-                  <Option value={0}>No</Option>
-                  <Option value={1}>Yes</Option>
-                </Select>
+                <RadioGroup>
+                    <Radio value={0}>No</Radio>
+                    <Radio value={1}>Yes</Radio>    
+                </RadioGroup>
               )}
             </FormItem>
 
