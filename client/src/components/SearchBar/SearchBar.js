@@ -4,6 +4,8 @@ import { Form, Row, Col, Input, Button } from 'antd';
 import API from "../../utils/API"
 import Report from "../Report"
 
+import { PDFExport } from '@progress/kendo-react-pdf';
+
 const FormItem = Form.Item;
 
 class AdvancedSearchForm extends React.Component {
@@ -11,6 +13,12 @@ class AdvancedSearchForm extends React.Component {
     searchSubmit: false,
     searchResult: {}
   };
+
+  report = {};
+
+  exportPDF = () => {
+    this.report.save();
+}
 
   handleSearch = (e) => {
     e.preventDefault();
@@ -48,6 +56,8 @@ class AdvancedSearchForm extends React.Component {
       );
     }
 
+
+
   render() {
     return (
         <div>
@@ -67,7 +77,24 @@ class AdvancedSearchForm extends React.Component {
             </Form>
             {this.state.searchSubmit && 
                 <div className="search-result-list">
-                    {this.state.searchResult?<Report data = {this.state.searchResult}/>:
+                    {this.state.searchResult?
+                    (<div>
+                      <button onClick={this.exportPDF}>Generate PDF</button>
+
+                      <PDFExport paperSize={'Letter'}
+                      fileName={`${this.state.searchResult.sampleId}.pdf`}
+                      title={`Placenta pathology report`}
+                      subject="subject"
+                      keywords="keyword"
+                      ref={(r) => this.report=r}
+                      scale={0.8}
+                      paperSize="A4"
+                      margin="2cm">
+
+                        <Report data = {this.state.searchResult}/>
+                      </PDFExport>
+      
+                    </div>):
                     <h1> sample ID does not exist </h1> 
                     }
             </div>}
