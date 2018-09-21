@@ -1,1 +1,23 @@
 @import '~antd/dist/antd.css';
+
+h1, h2, h3, h4, h5, h6, label {
+  margin-bottom: 0.5em;
+  line-height: 1;
+}
+
+h4{
+  color: #1890ff;
+}
+.ant-form-item {
+  margin-bottom: 5px;
+}
+
+.ant-form-item-label {
+  line-height: inherit !important
+}
+
+.ant-divider-horizontal {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  height: 2px ;
+}

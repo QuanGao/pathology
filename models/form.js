@@ -30,8 +30,11 @@ const FormSchema = new Schema({
     chorionicPlateFIR: {
         type: String
     },
-    villitisMembranesCMC: {
+    villitisMembranesCC: {
         type: Number
+    },
+    villitisMembranesCCPC: {
+      type: Number
     },
     villitisChorionicPlateCC: {
         type: Number

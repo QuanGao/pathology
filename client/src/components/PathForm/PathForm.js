@@ -166,10 +166,10 @@ class TimeRelatedForm extends React.Component {
             <h5 style={{fontStyle:"italic"}}>Membranes</h5>
             
             <FormItem 
-            label="Chronic marginating choriodeciduitis"
+            label="Chronic chorionitis"
             style={{maxWidth:400}}
             >
-            {getFieldDecorator('villitisMembranesCMC', {
+            {getFieldDecorator('villitisMembranesCC', {
                 initialValue: 0
               })(
                 <RadioGroup>
@@ -179,6 +179,19 @@ class TimeRelatedForm extends React.Component {
               )}
             </FormItem>
 
+            <FormItem 
+            label="Chronic deciduitis with plasma cells"
+            style={{maxWidth:400}}
+            >
+            {getFieldDecorator('villitisMembranesCCPC', {
+                initialValue: 0
+              })(
+                <RadioGroup>
+                    <Radio value={0}>No</Radio>
+                    <Radio value={1}>Yes</Radio>    
+                </RadioGroup>
+              )}
+            </FormItem>
 
             <h5 style={{fontStyle:"italic"}}>Chorionic plate</h5>
             
