@@ -24,7 +24,8 @@ function findPattern (data) {
    
 function isAbnormal (data) {
     console.log("data.villitisAAV"+data.villitisAAV)
-    return data.villitisMembranesCMC === 1 ||
+    return data.villitisMembranesCC === 1 ||
+    data.villitisMembranesCDwPC === 1 ||
     data.villitisChorionicPlateCC === 1 || 
     data.villitisChorionicPlateETV === 1||
     data.villitisCMV_I === "positive" ||

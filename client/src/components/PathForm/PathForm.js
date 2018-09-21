@@ -183,7 +183,7 @@ class TimeRelatedForm extends React.Component {
             label="Chronic deciduitis with plasma cells"
             style={{maxWidth:400}}
             >
-            {getFieldDecorator('villitisMembranesCCPC', {
+            {getFieldDecorator('villitisMembranesCDwPC', {
                 initialValue: 0
               })(
                 <RadioGroup>

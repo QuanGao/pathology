@@ -33,7 +33,7 @@ const FormSchema = new Schema({
     villitisMembranesCC: {
         type: Number
     },
-    villitisMembranesCCPC: {
+    villitisMembranesCDwPC: {
       type: Number
     },
     villitisChorionicPlateCC: {

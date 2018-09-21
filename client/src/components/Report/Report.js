@@ -75,7 +75,8 @@ const Report = (props)=>(
             (<div>                  
                 <p>Associated features: </p>
                 <ul>
-                    {props.data.villitisMembranesCMC === 1 && (<li>Chronic marginating choriodeciduitis</li>)}
+                    {props.data.villitisMembranesCC === 1 && (<li>Membranes chronic chorionitis</li>)}
+                    {props.data.villitisMembranesCDwPC === 1 && (<li>Membranes chronic deciduitis with plasma cells</li>)}
                     {props.data.deciduaCDwPC === 1 && (<li>Chronic deciduitis with plasma cells.</li>)}
                     {props.data.villitisChorionicPlateCC === 1 && (<li>Chronic chorionitis.</li>)}
                     {props.data.villitisChorionicPlateETV === 1 && (<li>Eosinophilic/T-cell vasculitis.</li>)}
@@ -95,8 +96,12 @@ const Report = (props)=>(
         {!VI.isChronicVillitis(props.data) || VI.isSingle(props.data) ?
            (<div>
                 <p>
-                    {props.data.villitisMembranesCMC === 1 && 
-                        "Chronic marginating choriodeciduitis."}
+                    {props.data.villitisMembranesCC === 1 && 
+                        "Membranes chronic chorionitis"}
+                </p>
+                <p>
+                    {props.data.villitisMembranesCDwPC === 1 && 
+                        "Membranes chronic deciduitis with plasma cells<"}
                 </p>
                 <p>
                     {props.data.deciduaCDwPC === 1 && 
