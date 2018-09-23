@@ -79,9 +79,11 @@ class AdvancedSearchForm extends React.Component {
                 <div className="search-result-list">
                     {this.state.searchResult?
                     (<div>
-                      <button onClick={this.exportPDF}>Generate PDF</button>
+                      <div style={{marginBottom: 5, marginTop: 10}}>
+                        <Button type="primary" icon="download" onClick={this.exportPDF}>Download</Button>
+                      </div>
 
-                      <PDFExport paperSize={'Letter'}
+                      <PDFExport
                       fileName={`${this.state.searchResult.sampleId}.pdf`}
                       title={`Placenta pathology report`}
                       subject="subject"
