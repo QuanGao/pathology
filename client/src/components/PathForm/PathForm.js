@@ -9,10 +9,12 @@ const villitisLocationOptions = [ "parabasal", "paraseptal", "mid parenchymal", 
 
 class TimeRelatedForm extends React.Component {
   state = {
-    VillousDiscCV: 0,
+    villousDiscCV: 0,
     umbVesselIntralumThrombus: 0,
     chorionVesselIntralumThrombus: "0",
-    stemVesselIntralumThrombus: "0"
+    stemVesselIntralumThrombus: "0",
+    vilStromVasKaryorrhexisLoci:"None",
+    avascularVilliNumLoci:"None"
   };
   handleSubmit = (e) => {
     e.preventDefault();
@@ -38,25 +40,10 @@ class TimeRelatedForm extends React.Component {
     }
     cb()
   };
-  handleVillousDiscCVchange = (event) => {
+  toggleItems = (item, event) =>{
     this.setState({
-      VillousDiscCV: event.target.value
-    }, ()=>console.log("state.VillousDiscCV: "+this.state.VillousDiscCV))
-  };
-  handleUmbVesselIntralumThrombus = (event) => {
-    this.setState({
-      umbVesselIntralumThrombus: event.target.value
-    });
-  };
-  handleChorionVesselIntralumThrombus = (event) => {
-    this.setState({
-      chorionVesselIntralumThrombus: event.target.value
-    });
-  };
-  handleStemVesselIntralumThrombus = (event) => {
-    this.setState({
-      stemVesselIntralumThrombus: event.target.value
-    });
+      [item]: event.target.value
+    }, ()=>console.log(this.state))
   }
   onChange = (checkedValues) => {
     console.log('checked = ', checkedValues);
@@ -244,14 +231,14 @@ class TimeRelatedForm extends React.Component {
       {getFieldDecorator('villousDiscCV', {
         initialValue: 0
       })(
-        <RadioGroup onChange ={this.handleVillousDiscCVchange}>
+        <RadioGroup onChange ={(event)=>this.toggleItems('villousDiscCV', event)}>
           <Radio value={0}>No</Radio>
           <Radio value={1}>Yes</Radio>    
         </RadioGroup>
       )}
       </FormItem>
 
-      {this.state.VillousDiscCV !==0 && 
+      {this.state.villousDiscCV !==0 && 
       <section className="villousDiscCV-details">              
         <FormItem 
           label="Villitis–largest focus"
@@ -429,7 +416,7 @@ class TimeRelatedForm extends React.Component {
         {getFieldDecorator('umbVesselIntralumThrombus', {
           initialValue: 0
         })(
-        <RadioGroup onChange={this.handleUmbVesselIntralumThrombus}>
+        <RadioGroup onChange={(event)=>this.toggleItems('umbVesselIntralumThrombus', event)}>
           <Radio value={0}>None</Radio>
           <Radio value={1}>1 vessel</Radio>
           <Radio value={2}>2 vessels</Radio>
@@ -479,7 +466,7 @@ class TimeRelatedForm extends React.Component {
         {getFieldDecorator('chorionVesselIntralumThrombus', {
           initialValue: "0"
         })(
-        <RadioGroup onChange={this.handleChorionVesselIntralumThrombus}>
+        <RadioGroup onChange={(event)=>this.toggleItems('chorionVesselIntralumThrombus', event)}>
           <Radio value="0">None</Radio>
           <Radio value="1">1 vessel</Radio>
           <Radio value="2">2 vessels</Radio>
@@ -489,7 +476,7 @@ class TimeRelatedForm extends React.Component {
         )}
       </FormItem>
 
-      {this.state.chorionVesselIntralumThrombus !=0 && 
+      {this.state.chorionVesselIntralumThrombus !=="0" && 
       <FormItem 
         label="Obstructive"
         style={{maxWidth:400}}
@@ -541,9 +528,9 @@ class TimeRelatedForm extends React.Component {
         style={{maxWidth:400}}
         >
         {getFieldDecorator('stemVesselIntralumThrombus', {
-          initialValue: 0
+          initialValue: "0"
         })(
-        <RadioGroup onChange={this.handleStemVesselIntralumThrombus}>
+        <RadioGroup onChange={(event)=>this.toggleItems('stemVesselIntralumThrombus', event)}>
           <Radio value="0">None</Radio>
           <Radio value="1">1 vessel</Radio>
           <Radio value="2">2 vessels</Radio>
@@ -553,7 +540,7 @@ class TimeRelatedForm extends React.Component {
         )}
       </FormItem>
 
-      {this.state.stemVesselIntralumThrombus !=0 && 
+      {this.state.stemVesselIntralumThrombus !=="0" && 
       <FormItem 
         label="Obstructive"
         style={{maxWidth:400}}
@@ -582,27 +569,101 @@ class TimeRelatedForm extends React.Component {
         )}
       </FormItem>
 
-
-
-
-
-
-
-
-
-
-
-
-
-      <FormItem
-      wrapperCol={{
-        xs: { span: 24, offset: 0 },
-        sm: { span: 16, offset: 8 },
-      }}
-      style={{maxWidth:400, margin:"auto"}}
-      >
-        <Button type="primary" htmlType="submit">Submit</Button>
+      <FormItem 
+        label="Villous stromal vascular karyorrhexis - number of foci:"
+        style={{maxWidth:400}}
+        >
+        {getFieldDecorator('vilStromVasKaryorrhexisLoci', {
+          initialValue: "None"
+        })(
+        <RadioGroup onChange={(event)=>this.toggleItems('vilStromVasKaryorrhexisLoci', event)}>
+          <Radio value="None">None</Radio>
+          <Radio value="Few">Few</Radio>
+          <Radio value="Many">Many</Radio>
+          <Radio value="Diffuse">Diffuse</Radio>
+        </RadioGroup>
+        )}
       </FormItem>
+
+      {this.state.vilStromVasKaryorrhexisLoci !=="None" &&
+      <FormItem 
+        label="Villous stromal vascular karyorrhexis - largest focus:"
+        style={{maxWidth:400}}
+        >
+        {getFieldDecorator('vilStromVasKaryorrhexisLargestfocus', {
+          initialValue: "3"
+        })(
+        <RadioGroup>
+          <Radio value="3">3</Radio>
+          <Radio value="4-9">4-9</Radio>
+          <Radio value="10-25">10-25</Radio>
+          <Radio value="26-50">26-50</Radio>
+          <Radio value=">50">>50</Radio>
+          <Radio value="Regiona">Regional</Radio>
+        </RadioGroup>
+        )}
+      </FormItem>}
+ 
+      <FormItem 
+        label="Avascular villi (not associated with chronic vilitis) - number of foci:"
+        style={{maxWidth:400}}
+        >
+        {getFieldDecorator('avascularVilliNumLoci', {
+          initialValue: "None"
+        })(
+        <RadioGroup onChange={(event)=>this.toggleItems("avascularVilliNumLoci", event)}>
+          <Radio value="None">None</Radio>
+          <Radio value="Few">Few</Radio>
+          <Radio value="Many">Many</Radio>
+          <Radio value="Diffuse">Diffuse</Radio>
+        </RadioGroup>
+        )}
+      </FormItem>
+
+
+      {this.state.avascularVilliNumLoci !=="None" &&
+      <section>
+        <FormItem 
+          label="Avascular villi - largest focus:"
+          style={{maxWidth:400}}
+          >
+          {getFieldDecorator('avascularVilliLargestfocus', {
+            initialValue: "3"
+          })(
+          <RadioGroup>
+            <Radio value="3">3</Radio>
+            <Radio value="4-9">4-9</Radio>
+            <Radio value="10-25">10-25</Radio>
+            <Radio value="26-50">26-50</Radio>
+            <Radio value=">50">>50</Radio>
+            <Radio value="Regiona">Regional</Radio>
+          </RadioGroup>
+          )}
+        </FormItem>
+        <FormItem 
+        label="Avascular vlli - total number of avascular villi:"
+        style={{maxWidth:400}}
+        >
+        {getFieldDecorator('avascularVilliTotalNum', {
+          initialValue: "<45"
+        })(
+          <RadioGroup>
+            <Radio value="<45">less than 45 </Radio>
+            <Radio value=">45">>45</Radio>
+          </RadioGroup>
+        )}
+        </FormItem>
+      </section>}
+
+        <FormItem
+        wrapperCol={{
+          xs: { span: 24, offset: 0 },
+          sm: { span: 16, offset: 8 },
+        }}
+        style={{maxWidth:400, margin:"auto"}}
+        >
+          <Button type="primary" htmlType="submit">Submit</Button>
+        </FormItem>
 
     </Form>
   }
