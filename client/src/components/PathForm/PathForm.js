@@ -1,6 +1,6 @@
 import React from "react"
 import "./PathForm.css"
-import { Divider, Select, Form, Button,InputNumber, Input, Radio, Checkbox } from 'antd';
+import { Divider, Select, Form, Button,InputNumber, Input, Radio, Checkbox, Icon } from 'antd';
 const RadioGroup = Radio.Group
 const FormItem = Form.Item;
 const Option = Select.Option;
@@ -377,6 +377,7 @@ class TimeRelatedForm extends React.Component {
       </FormItem>
 
       <Divider/> 
+      <h4>Fetal vascular malperfusion</h4>
       <h5 style={{fontStyle:"italic"}}>Gross features</h5>
       <FormItem 
       label="Hypercoiled umbilical cord"
