@@ -5,7 +5,7 @@ import {Divider} from 'antd'
 import GaWtCal from "../../utils/GaWtCal.js"
 import IR from "../../utils/IR"
 import VI from "../../utils/Villitis"
-
+import FVM from "../../utils/FetalVasMalperfusion"
 
 const Report = (props)=>(
   <div style={{}}>
@@ -122,6 +122,16 @@ const Report = (props)=>(
         </div>):""             
       }
       
+    <div>
+      <h4>Fetal vascular FetalVasMalperfusion</h4>
+
+    </div>
+    
+    <div><h4>All data</h4><p><pre>{JSON.stringify(props.data, null, 2)}</pre></p></div>
+    
+
+
+
   </div>
 )
 

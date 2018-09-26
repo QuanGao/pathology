@@ -99,7 +99,7 @@ class HeaderContentFooter extends React.Component {
                 <div style={{background: '#fff', 
                 padding: 50, 
                 minHeight: 380, 
-                maxWidth: this.state.activeKey === "3"? 1400:800,
+                maxWidth: this.state.activeKey === "3"? 3000:800,
                 margin:"auto"
                 }}>
                     {this.renderContent(this.state.activeKey)}

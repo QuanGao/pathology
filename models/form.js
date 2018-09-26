@@ -109,13 +109,13 @@ const FormSchema = new Schema({
   stemVillousVesselObliteration:{
     type: Number
   },
-  vilStromVasKaryorrhexisLoci:{
+  vilStromVasKaryorrhexisFoci:{
     type: String
   },
   vilStromVasKaryorrhexisLargestfocus:{
     type: String
   },
-  avascularVilliNumLoci:{
+  avascularVilliNumFoci:{
     type: String
   },
   avascularVilliLargestfocus:{

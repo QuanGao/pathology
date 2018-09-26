@@ -9,55 +9,79 @@ import {Table} from 'antd';
     key: 'sampleId',
   },
     {
-    title: 'villitisMembranesCMC',
-    dataIndex: 'villitisMembranesCMC',
-    key: 'villitisMembranesCMC',
+    title: 'hypercoiledUmbCord',
+    dataIndex: 'hypercoiledUmbCord',
+    key: 'hypercoiledUmbCord',
   }, {
-    title: 'villitisChorionicPlateCC',
-    dataIndex: 'villitisChorionicPlateCC',
-    key: 'villitisChorionicPlateCC',
+    title: 'umbVesselIntramuFibrin',
+    dataIndex: 'umbVesselIntramuFibrin',
+    key: 'umbVesselIntramuFibrin',
   }, {
-    title: 'villitisChorionicPlateETV',
-    dataIndex: 'villitisChorionicPlateETV',
-    key: 'villitisChorionicPlateETV',
+    title: 'umbVesselIntralumThrombus',
+    dataIndex: 'umbVesselIntralumThrombus',
+    key: 'umbVesselIntralumThrombus',
   }, {
-    title: 'villousDiscCV',
-    dataIndex: 'villousDiscCV',
-    key: 'villousDiscCV',
+    title: 'umbVesselIntralumThrombusObs',
+    dataIndex: 'umbVesselIntralumThrombusObs',
+    key: 'umbVesselIntralumThrombusObs',
   }, {
-    title: 'villitisLargestFocus',
-    dataIndex: 'villitisLargestFocus',
-    key: 'villitisLargestFocus',
+    title: 'chorionVesselIntramuFibrin',
+    dataIndex: 'chorionVesselIntramuFibrin',
+    key: 'chorionVesselIntramuFibrin',
   }, {
-    title: 'villitisNumOfFoci',
-    dataIndex: 'villitisNumOfFoci',
-    key: 'villitisNumOfFoci',
+    title: 'chorionVesselIntralumThrombus',
+    dataIndex: 'chorionVesselIntralumThrombus',
+    key: 'chorionVesselIntralumThrombus',
   }, {
-    title: 'villitisAAV',
-    dataIndex: 'villitisAAV',
-    key: 'villitisAAV',
+    title: 'chorionVesselIntralumThrombusObs',
+    dataIndex: 'chorionVesselIntralumThrombusObs',
+    key: 'chorionVesselIntralumThrombusObs',
   }, {
-    title: 'villitisASVOC',
-    dataIndex: 'villitisASVOC',
-    key: 'villitisASVOC',
+    title: 'chorionVascularEctasia',
+    dataIndex: 'chorionVascularEctasia',
+    key: 'chorionVascularEctasia',
   }, {
-    title: 'villitisVI',
-    dataIndex: 'villitisVI',
-    key: 'villitisVI',
+    title: 'stemVesselIntramuFibrin',
+    dataIndex: 'stemVesselIntramuFibrin',
+    key: 'stemVesselIntramuFibrin',
   }, {
-    title: 'villitisCMV_I',
-    dataIndex: 'villitisCMV_I',
-    key: 'villitisCMV_I',
+    title: 'stemVesselIntralumThrombus',
+    dataIndex: 'stemVesselIntralumThrombus',
+    key: 'stemVesselIntralumThrombus',
   }, {
-    title: 'villitisT_I',
-    dataIndex: 'villitisT_I',
-    key: 'villitisT_I',
+    title: 'stemVesselIntralumThrombusObs',
+    dataIndex: 'stemVesselIntralumThrombusObs',
+    key: 'stemVesselIntralumThrombusObs',
   }
 , 
   {
-    title: 'deciduaCDwPC',
-    dataIndex: 'deciduaCDwPC',
-    key: 'deciduaCDwPC',
+    title: 'stemVillousVesselObliteration',
+    dataIndex: 'stemVillousVesselObliteration',
+    key: 'stemVillousVesselObliteration',
+  }
+, 
+  {
+    title: 'vilStromVasKaryorrhexisFoci',
+    dataIndex: 'vilStromVasKaryorrhexisFoci',
+    key: 'vilStromVasKaryorrhexisFoci',
+  }
+, 
+  {
+    title: 'avascularVilliNumFoci',
+    dataIndex: 'avascularVilliNumFoci',
+    key: 'avascularVilliNumFoci',
+  }
+, 
+  {
+    title: 'avascularVilliLargestfocus',
+    dataIndex: 'avascularVilliLargestfocus',
+    key: 'avascularVilliLargestfocus',
+  }
+, 
+  {
+    title: 'avascularVilliTotalNum',
+    dataIndex: 'avascularVilliTotalNum',
+    key: 'avascularVilliTotalNum',
   }
 ];
   
@@ -65,41 +89,3 @@ const DataTable = (props) => <Table dataSource={props.data} columns={columns} />
 
 export default DataTable
 
-// [{
-//     title: 'Gestation Weeks',
-//     dataIndex: 'gestationWeeks',
-//     key: 'gestationWeeks',
-//   }, {
-//     title: 'Placenta Weight',
-//     dataIndex: 'placentaWeight',
-//     key: 'placentaWeight',
-//   }, {
-//     title: 'Placent weight/weeks',
-//     dataIndex: 'placentaWtCondition',
-//     key: 'placentaWtCondition',
-//   },{
-//     title: 'membranesMIR',
-//     dataIndex: 'membranesMIR',
-//     key: 'membranesMIR',
-//   },{
-//     title: 'umbilicalCordFIR',
-//     dataIndex: 'umbilicalCordFIR',
-//     key: 'umbilicalCordFIR',
-//   },{
-//     title: 'chorionicPlateMIR',
-//     dataIndex: 'chorionicPlateMIR',
-//     key: 'chorionicPlateMIR',
-//   },{
-//     title: 'chorionicPlateFIR',
-//     dataIndex: 'chorionicPlateFIR',
-//     key: 'chorionicPlateFIR',
-//   }, {
-//     title: 'Date',
-//     dataIndex: 'createdAt',
-//     key: 'date',
-//   }, {
-//     title: 'villitisLocation',
-//     dataIndex: 'villitisLocation',
-//     key: 'villitisLocation',
-//   }
-// ]
