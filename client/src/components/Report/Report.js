@@ -123,11 +123,13 @@ const Report = (props)=>(
       }
       
     <div>
-      <h4>Fetal vascular FetalVasMalperfusion</h4>
-
+      <h4>Fetal Vascular Malperfusion</h4>
+      {FVM.isFetalVasMalperfusion(props.data) && 
+        <p>Features consistent with fetal vascular malperfusion ({FVM.determineGrade(props.data)} grade)</p>}
+      {props.data.hypercoiledUmbCord!==0 && <p>Hypercoiled umbilical cord</p>}
     </div>
     
-    <div><h4>All data</h4><p><pre>{JSON.stringify(props.data, null, 2)}</pre></p></div>
+    <div><h4>All data</h4><pre>{JSON.stringify(props.data, null, 2)}</pre></div>
     
 
 
