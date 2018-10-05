@@ -13,8 +13,8 @@ class TimeRelatedForm extends React.Component {
     umbVesselIntralumThrombus: 0,
     chorionVesselIntralumThrombus: "0",
     stemVesselIntralumThrombus: "0",
-    vilStromVasKaryorrhexisFoci:"None",
-    avascularVilliNumFoci:"None"
+    vilStromVasKaryorrhexisFoci:"none",
+    avascularVilliNumFoci:"none"
   };
   handleSubmit = (e) => {
     e.preventDefault();
@@ -263,14 +263,14 @@ class TimeRelatedForm extends React.Component {
         style={{maxWidth:400}}
         >
         {getFieldDecorator('villitisNumOfFoci', {
-          initialValue: "None"
+          initialValue: "none"
         })(
           <RadioGroup>
-            <Radio value="None">None</Radio>
-            <Radio value="Single">Single</Radio>
-            <Radio value="Few">Few</Radio>
-            <Radio value="Many">Many</Radio>
-            <Radio value="Diffuse">Diffuse</Radio>
+            <Radio value="none">None</Radio>
+            <Radio value="single">Single</Radio>
+            <Radio value="few">Few</Radio>
+            <Radio value="many">Many</Radio>
+            <Radio value="diffuse">Diffuse</Radio>
           </RadioGroup>
           )}
         </FormItem>
@@ -575,18 +575,18 @@ class TimeRelatedForm extends React.Component {
         style={{maxWidth:400}}
         >
         {getFieldDecorator('vilStromVasKaryorrhexisFoci', {
-          initialValue: "None"
+          initialValue: "none"
         })(
         <RadioGroup onChange={(event)=>this.toggleItems('vilStromVasKaryorrhexisFoci', event)}>
-          <Radio value="None">None</Radio>
-          <Radio value="Few">Few</Radio>
-          <Radio value="Many">Many</Radio>
-          <Radio value="Diffuse">Diffuse</Radio>
+          <Radio value="none">None</Radio>
+          <Radio value="few">Few</Radio>
+          <Radio value="many">Many</Radio>
+          <Radio value="diffuse">Diffuse</Radio>
         </RadioGroup>
         )}
       </FormItem>
 
-      {this.state.vilStromVasKaryorrhexisFoci !=="None" &&
+      {this.state.vilStromVasKaryorrhexisFoci !=="none" &&
       <FormItem 
         label="Villous stromal vascular karyorrhexis - largest focus:"
         style={{maxWidth:400}}
@@ -600,7 +600,7 @@ class TimeRelatedForm extends React.Component {
           <Radio value="10-25">10-25</Radio>
           <Radio value="26-50">26-50</Radio>
           <Radio value=">50">>50</Radio>
-          <Radio value="Regional">Regional</Radio>
+          <Radio value="regional">Regional</Radio>
         </RadioGroup>
         )}
       </FormItem>}
@@ -610,19 +610,19 @@ class TimeRelatedForm extends React.Component {
         style={{maxWidth:400}}
         >
         {getFieldDecorator('avascularVilliNumFoci', {
-          initialValue: "None"
+          initialValue: "none"
         })(
         <RadioGroup onChange={(event)=>this.toggleItems("avascularVilliNumFoci", event)}>
-          <Radio value="None">None</Radio>
-          <Radio value="Few">Few</Radio>
-          <Radio value="Many">Many</Radio>
-          <Radio value="Diffuse">Diffuse</Radio>
+          <Radio value="none">None</Radio>
+          <Radio value="few">Few</Radio>
+          <Radio value="many">Many</Radio>
+          <Radio value="diffuse">Diffuse</Radio>
         </RadioGroup>
         )}
       </FormItem>
 
 
-      {this.state.avascularVilliNumFoci !=="None" &&
+      {this.state.avascularVilliNumFoci !=="none" &&
       <section>
         <FormItem 
           label="Avascular villi - largest focus:"
@@ -637,7 +637,7 @@ class TimeRelatedForm extends React.Component {
             <Radio value="10-25">10-25</Radio>
             <Radio value="26-50">26-50</Radio>
             <Radio value=">50">>50</Radio>
-            <Radio value="Regional">Regional</Radio>
+            <Radio value="regional">Regional</Radio>
           </RadioGroup>
           )}
         </FormItem>
