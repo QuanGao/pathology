@@ -124,17 +124,16 @@ const Report = (props)=>(
       
     <div>
       <h4>Fetal Vascular Malperfusion</h4>
-
-      {FVM.isFetalVasMalperfusion(props.data) && 
-        <p>Features consistent with fetal vascular malperfusion ({FVM.determineGrade(props.data)} grade)</p>}
-      <p>List Features</p>
-      {props.data.hypercoiledUmbCord!==0 && <p>Hypercoiled umbilical cord</p>}      
-      <p>{FVM.summerizeThrombus(props.data)}</p>
-      <p>{FVM.summerizeFibrin(props.data)}</p>
-      <p>{props.data.chorionVascularEctasia > 0 && "Vascular ectasia"}</p>
-      <p>{props.data.stemVillousVesselObliteration > 0 && "Stem villous vessel obliteration"}</p>
-      <p>{FVM.summerizeKaryorrhexis(props.data)}</p>
-      <p>{FVM.summerizeAvascularVilli(props.data)}</p>
+        {FVM.isFetalVasMalperfusion(props.data) && 
+          <p>Features consistent with fetal vascular malperfusion ({FVM.determineGrade(props.data)} grade)</p>}
+        <p>List Features</p>
+        {props.data.hypercoiledUmbCord!==0 && <p>Hypercoiled umbilical cord</p>}      
+        <p>{FVM.summerizeThrombus(props.data)}</p>
+        <p>{FVM.summerizeFibrin(props.data)}</p>
+        <p>{props.data.chorionVascularEctasia > 0 && "Vascular ectasia"}</p>
+        <p>{props.data.stemVillousVesselObliteration > 0 && "Stem villous vessel obliteration"}</p>
+        <p>{FVM.summerizeKaryorrhexis(props.data)}</p>
+        <p>{FVM.summerizeAvascularVilli(props.data)}</p>
     </div>
     <div>
       <h4>All data</h4>
