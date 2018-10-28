@@ -1,9 +1,0 @@
-.ant-table-thead, .ant-table-row{
-    font-size: 0.8em;
-}
-
-.ant-table-thead > tr > th, .ant-table-tbody > tr > td {
-    padding: 4px;
-    text-align: center;
-}
-

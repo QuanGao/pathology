@@ -1,6 +1,4 @@
 import React from "react";
-import "./Report.css"
-
 import {Divider} from 'antd'
 import GaWtCal from "../../utils/GaWtCal.js"
 import IR from "../../utils/IR"

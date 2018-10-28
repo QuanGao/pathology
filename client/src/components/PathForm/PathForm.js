@@ -1,5 +1,4 @@
 import React from "react"
-import "./PathForm.css"
 import { Divider, Select, Form, Button,InputNumber, Input, Radio, Checkbox } from 'antd';
 const RadioGroup = Radio.Group
 const FormItem = Form.Item;

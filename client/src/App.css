@@ -21,3 +21,48 @@ h4{
   margin-bottom: 15px;
   height: 2px ;
 }
+/* DataTable */
+.ant-table-thead, .ant-table-row{
+  font-size: 0.8em;
+}
+
+.ant-table-thead > tr > th, .ant-table-tbody > tr > td {
+  padding: 4px;
+  text-align: center;
+}
+
+/* HeaderFooterContent */
+.logo {
+  width: 120px;
+  height: 31px;
+  background: rgba(255,255,255,.2);  
+  margin: 16px 24px 16px 0;
+  float: left;
+}
+/* PathForm */
+#sampleId {
+  width: 200px;
+}
+/* Report */
+.secondP {
+  text-indent: 2em;
+}
+.thirdP {
+  text-indent: 4em;
+}
+
+/* searchBar */
+.ant-advanced-search-form {
+  padding: 24px;
+  background: #fbfbfb;
+  border: 1px solid #d9d9d9;
+  border-radius: 6px;
+}
+
+.ant-advanced-search-form .ant-form-item {
+  display: flex;
+}
+
+.ant-advanced-search-form .ant-form-item-control-wrapper {
+  flex: 1;
+}

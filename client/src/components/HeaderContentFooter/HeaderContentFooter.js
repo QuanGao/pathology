@@ -1,5 +1,4 @@
 import React from "react"
-import "./HeaderContentFooter.css"
 import { Layout, Menu} from 'antd';
 import PathForm from "../PathForm"
 import AllForm from "../AllForm"
