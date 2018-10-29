@@ -16,8 +16,8 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-          <pre>{JSON.stringify(this.props)}</pre>
-          <button onClick={()=>this.props.simpleAction()}>Test redux action</button>
+          {/* <pre>{JSON.stringify(this.props)}</pre>
+          <button onClick={()=>this.props.simpleAction()}>Test redux action</button> */}
           <HeaderContentFooter/>
       </div>
     );

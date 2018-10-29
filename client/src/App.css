@@ -21,16 +21,13 @@ h4{
   margin-bottom: 15px;
   height: 2px ;
 }
-/* DataTable */
-.ant-table-thead, .ant-table-row{
-  font-size: 0.8em;
+/* All data */
+.sample-list-item:hover {
+  cursor: pointer;
 }
-
-.ant-table-thead > tr > th, .ant-table-tbody > tr > td {
-  padding: 4px;
-  text-align: center;
+.sample-list-item.selected {
+  font-weight: bold;
 }
-
 /* HeaderFooterContent */
 .logo {
   width: 120px;
