@@ -1,6 +1,4 @@
 import React from "react"
-import "./DataTable.css"
-
 import {Table} from 'antd';
 
   const columns = [{

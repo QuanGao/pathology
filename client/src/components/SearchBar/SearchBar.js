@@ -1,5 +1,4 @@
 import React from "react"
-import "./SearchBar.css"
 import { Form, Row, Col, Input, Button } from 'antd';
 import API from "../../utils/API"
 import Report from "../Report"

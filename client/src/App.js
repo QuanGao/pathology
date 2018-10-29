@@ -1,29 +1,27 @@
 import React, { Component } from 'react';
-// import logo from './logo.svg';
+import { connect } from 'react-redux';
+
 import './App.css';
-// import { BrowserRouter as Router, Route} from "react-router-dom";
-import HeaderContentFooter from "./components/HeaderContentFooter"
-// import addForm from "./components/AddForm";
-// import searchForm from "./components/SearchForm";
-// import editForm from "./components/EditForm";
-// import Navbar from "./components/NavBar"
-// <Route exact path="/new" component={addForm}></Route>
-// <Route exact path="/search" component={searchForm}></Route>
-// <Route exact path="/edit" component={editForm}></Route>
+import HeaderContentFooter from "./components/HeaderContentFooter";
+import simpleAction from './actions/simpleAction';
+
+const mapStateToProps = state => ({...state});
+const mapDispatchToProps = dispatch => {
+  return {
+    simpleAction: ()=>dispatch(simpleAction())
+  }
+}
+
 class App extends Component {
   render() {
     return (
-    // <Router>
-    //   <div>
-    //    <div className="App">      
-    //     </div>
-    //   </div>
-    // </Router>
-    <div className="App">
-        <HeaderContentFooter/>
-    </div>
+      <div className="App">
+          {/* <pre>{JSON.stringify(this.props)}</pre>
+          <button onClick={()=>this.props.simpleAction()}>Test redux action</button> */}
+          <HeaderContentFooter/>
+      </div>
     );
   }
 }
 
-export default App;
+export default connect(mapStateToProps, mapDispatchToProps)(App);
