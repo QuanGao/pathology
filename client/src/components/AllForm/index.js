@@ -10,9 +10,10 @@ class AllForm extends React.Component{
         };
     }
 
-    handleSelect = (sampleId) => {
-        return API.findFormById(sampleId).then(
+    handleSelect = (item) => {
+        return API.findFormById(item._id).then(
             response => {
+                console.log(response.data)
                 this.setState ({
                     selectedSample: {...response.data}
                 })
@@ -23,6 +24,7 @@ class AllForm extends React.Component{
     getSampleList = () => {
         return API.getSampleList().then(
             response => {
+                console.log(response.data)
                 this.setState({
                     sampleList: [...response.data]
                 })
@@ -41,10 +43,10 @@ class AllForm extends React.Component{
                 {this.state.sampleList.map( (item,index) => 
                     <li 
                         key={index} 
-                        onClick={()=>this.handleSelect(item.sampleId)} 
-                        className={item.sampleId === this.state.selectedSample.sampleId ? "sample-list-item selected":"sample-list-item"}
+                        onClick={()=>this.handleSelect(item)} 
+                        className={item._id === this.state.selectedSample._id ? "sample-list-item selected":"sample-list-item"}
                     >
-                        <span>sampleId: {item.sampleId}</span>
+                        <span>sampleId: {item.sample_id}</span>
                         {'  '}
                         <span>Created at: {item.createdAt}</span>
                     </li>

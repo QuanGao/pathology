@@ -15,7 +15,7 @@ class SearchForm extends React.Component {
         e.preventDefault();
         this.props.form.validateFields((err, values) => {
             if (err) throw err;
-            API.findFormById(values.sampleId).then(
+            API.findFormBySampleId(values.sampleId).then(
                 response => this.setState({
                     searchResult: response.data, 
                     searchSubmitted: true
