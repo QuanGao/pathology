@@ -469,12 +469,12 @@ const formOptions = {
                 ],
                 total_num: [
                     {
-                        name: "<45",
+                        name: "less than 45",
                         value: "<45",
                         default: false
                     },
                     {
-                        name: ">45",
+                        name: "more than 45",
                         value: ">45",
                         default: false
                     }      
