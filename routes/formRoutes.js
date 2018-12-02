@@ -1,8 +1,9 @@
 const router = require("express").Router();
 const formController = require("../controllers/formController")
 
-router.get("/:sampleId", formController.findById)
-router.post("/", formController.add)
-router.get("/", formController.findall)
+router.get("/list", formController.getSampleList);
+router.get("/:sampleId", formController.findSampleById);
+router.post("/", formController.addSample);
+router.get("/", formController.findAllSamples);
 
 module.exports = router;

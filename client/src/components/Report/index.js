@@ -134,9 +134,9 @@ const Report = (props)=>(
         <p>{FVM.summerizeAvascularVilli(props.data)}</p>
     </div>
     <div>
-      <h4>All data</h4>
-      <pre>{JSON.stringify(props.data, null, 2)}</pre>
-    </div>
+        <h4>All data</h4>
+        <pre>{JSON.stringify(props.data, null, 2)}</pre>
+    </div> 
   </div>
 )
 

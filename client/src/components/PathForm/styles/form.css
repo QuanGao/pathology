@@ -1,0 +1,50 @@
+.ant-checkbox-wrapper {
+    color: black !important
+}
+.ant-input {
+    width: 60%
+}
+
+.mid-section, .last-section {
+    /* padding-top: 20px; */
+}
+
+.form-section {
+    padding-bottom: 5px;
+    padding-top: 20px;
+    margin-top: 5px;
+    background: #fff;
+}
+.section-title h4,.section-title h5 {
+    text-align: center;
+    text-transform: capitalize;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 600;
+    margin-bottom: 0.6em;
+    line-height: 1;
+}
+.action-buttons {
+    margin-top: 10px;
+}
+.section-title h4 {
+}
+
+.section-title h5 {
+    color: grey;
+}
+.ant-form-item-label label{
+    text-transform: capitalize;
+    line-height: 1;
+    word-wrap: normal
+}
+
+.top-section.action-buttons {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 60px;
+}
+
+.top-section.action-buttons, .bottom-section.action-buttons {
+    float: right;
+    margin-right: 5px;
+}
