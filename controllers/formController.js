@@ -1,6 +1,6 @@
 const db = require("../models")
 module.exports = {
-    findById: (req, res) => {
+    findSampleById: (req, res) => {
         const sampleId = req.params.sampleId.toUpperCase()
         db.Form.findOne({
             sampleId: sampleId
@@ -9,14 +9,21 @@ module.exports = {
         .catch(err => res.json(err))
     },
 
-    add: (req, res) => {
+    addSample: (req, res) => {
         db.Form.create(req.body)
         .then(dbForm => res.json(dbForm))
         .catch(err => res.json(err))
     },
-    findall: (req, res) => {
+
+    findAllSamples: (req, res) => {
         db.Form.find({})
         .then(dbForms => res.json(dbForms))
         .catch(err => res.json(err))
-    }
+    },
+
+    getSampleList: (req, res) => {
+        db.Form.find({}, { sampleId: 1, createdAt: 1, _id: 0})
+        .then(dbForms => res.json(dbForms))
+        .catch(err => res.json(err))
+    } 
 }
