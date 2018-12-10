@@ -9,7 +9,7 @@ const { Header, Content, Footer } = Layout;
 
 class App extends React.Component {
     state = {
-        activeKey: "2"
+        activeKey: "1"
     }
 
     handleMenuClick = (event) => {     
@@ -40,7 +40,7 @@ class App extends React.Component {
                     <Menu
                         theme="dark"
                         mode="horizontal"
-                        defaultSelectedKeys={['2']}
+                        defaultSelectedKeys={['1']}
                         style={{ lineHeight: '64px' }}
                     >
                         <Menu.Item onClick={this.handleMenuClick} key="1">Search</Menu.Item>
@@ -48,13 +48,13 @@ class App extends React.Component {
                         <Menu.Item onClick={this.handleMenuClick} key="3">All Data</Menu.Item>
                     </Menu>
                     </Header>
-                    <Content style={{ padding: '0 50px', marginTop: 100, zIndex: 1 }}>    
+                    <Content style={{ padding: '0 0px', marginTop: 100, zIndex: 1, minHeight: '90vh' }}>    
                         <div style={{
-                            background: this.state.activeKey === "2" ? '#f0f2f5':'#fff',
-                            padding: this.state.activeKey === "2"? 0:20, 
-                            minHeight: 380, 
-                            maxWidth: this.state.activeKey === "3"? 3000:800,
-                            margin:"auto"
+                                background: this.state.activeKey === "2" ? '#f0f2f5':'#fff',
+                                padding: this.state.activeKey === "2"? 0:20, 
+                                minHeight: 380, 
+                                maxWidth: this.state.activeKey === "3"? 3000:800,
+                                margin:"auto"
                             }}
                         >
                             {this.renderPage(this.state.activeKey)}

@@ -3,8 +3,8 @@ const formOptions = {
     membranes: {
         maternal_immune_response: [
             {
-                name: "0 – none",
-                value: "0 – none",
+                name: "0 - none",
+                value: "0 - none",
                 default: true
             },
             {
@@ -28,28 +28,28 @@ const formOptions = {
     umbilical_cord: {
         fetal_immune_response: [
             {
-                name: "0 – none",
-                value: "0 – none",
+                name: "0 - none",
+                value: "0 - none",
                 default: true
             },
             {
-                name: "1 – phlebitis",
-                value: "1 – phlebitis",
+                name: "1 - phlebitis",
+                value: "1 - phlebitis",
                 default: false
             },
             {
-                name: "2 – arteritis",
-                value: "2 – arteritis",
+                name: "2 - arteritis",
+                value: "2 - arteritis",
                 default: false
             },
             {
-                name: "2 – pan-vasculitis",
-                value: "2 – pan-vasculitis",
+                name: "2 - pan-vasculitis",
+                value: "2 - pan-vasculitis",
                 default: false
             },
             {
-                name: "3 – necrotizing funisitis",
-                value: "3 – necrotizing funisitis",
+                name: "3 - necrotizing funisitis",
+                value: "3 - necrotizing funisitis",
                 default: false
             }       
         ],
@@ -106,18 +106,18 @@ const formOptions = {
     chorionic_plate: {
         maternal_immune_response: [
             {
-                name: "0 – none",
-                value: "0 – none",
+                name: "0 - none",
+                value: "0 - none",
                 default: true
             },
             {
-                name: "1 – subchorionitis",
-                value: "1 – subchorionitis",
+                name: "1 - subchorionitis",
+                value: "1 - subchorionitis",
                 default: false
             },
             {
-                name: "2 – chorioamnionitis",
-                value: "2 – chorioamnionitis",
+                name: "2 - chorioamnionitis",
+                value: "2 - chorioamnionitis",
                 default: false
             },
             {
@@ -128,13 +128,13 @@ const formOptions = {
         ],
         fetal_immune_response: [
             {
-                name: "none",
-                value: "none",
+                name: "0 - none",
+                value: "0 - none",
                 default: true
             },
             {
-                name: "chorionic vasculitis",
-                value: "chorionic vasculitis",
+                name: "1 - chorionic vasculitis",
+                value: "1 - chorionic vasculitis",
                 default: false
             }
             

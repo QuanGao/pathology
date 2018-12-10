@@ -36,7 +36,7 @@ const VillousDisc = (props) => {
                         fieldLabel="villitis location"
                         fieldName="location"
                         options={formOptions.villous_disc.chronic_villitis.details.location}
-                        fieldValue={props.chronic_villitis.details && props.chronic_villitis.details.location || []}
+                        fieldValue={props.chronic_villitis.details && props.chronic_villitis.details.location ? props.chronic_villitis.details.location : []}
                         handleSelectFieldChange={e=>props.changeHandler(e, "villous_disc.chronic_villitis.details")}
                     />
                     <BooleanRadioBtn 

@@ -17,7 +17,9 @@ body {
 }
 
 /* General end */
-
+.clearfix {
+    clear: both;
+}
 
 /* search page start */
 #sampleId {

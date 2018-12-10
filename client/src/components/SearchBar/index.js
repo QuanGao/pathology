@@ -2,6 +2,7 @@ import React from "react";
 import { Form, Row, Col, Input, Button } from 'antd';
 import API from "../../utils/API";
 import PDFwrapper from "../PDFwrapper";
+import Report from "../Report";
 
 const FormItem = Form.Item;
 
@@ -68,7 +69,10 @@ class SearchForm extends React.Component {
 
                 {this.state.searchSubmitted && 
                     <div className="search-result-list">
-                        {this.state.searchResult ? <PDFwrapper PDFdata={this.state.searchResult} /> : this.renderSearchError()}    
+                        {this.state.searchResult ? 
+                            <PDFwrapper PDFdata={this.state.searchResult}>
+                                <Report data={this.state.searchResult}/>
+                            </PDFwrapper> : this.renderSearchError()}    
                     </div>
                 }
             </div>

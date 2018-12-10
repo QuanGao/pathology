@@ -1,3 +1,5 @@
+import React from 'react';
+
 const toNum = function(data) {
   if(!data) return 0;
   return data.toString().includes(">")? 4:+data.toString().match(/\d/)
@@ -35,7 +37,8 @@ const isFetalVasMalperfusion = function (data) {
 };
 
 const determineGrade = function (data){
-  return isCordPlateHighGrade(data) || isDiscHighGrade(data) || isAvascularVilliMoreThan45(data) ? "high":"low"
+    const grade = isCordPlateHighGrade(data) || isDiscHighGrade(data) || isAvascularVilliMoreThan45(data) ? "high" : "low";
+    return (<span>Features consistent with fetal vascular malperfusion ({grade} grade)</span>)
 };
 
 const withObstruction = function (data){
@@ -81,12 +84,28 @@ const summerizeAvascularVilli = function (data){
   return `Avascular villi, ${data.avascularVilliNumFoci} 
   foci up to ${data.avascularVilliLargestfocus} villi [${data.avascularVilliTotalNum} villi in total]`
 
-}
-module.exports = {
+};
+
+const getListOfFeaures = function (data){
+
+};
+
+{/* <span>List Features</span>
+{data.hypercoiledUmbCord!==0 && <span>Hypercoiled umbilical cord</span>}
+     
+<span>{FVM.summerizeThrombus(data)}</span>
+<span>{FVM.summerizeFibrin(data)}</span>
+<span>{data.chorionVascularEctasia > 0 && "Vascular ectasia"}</span>
+<span>{data.stemVillousVesselObliteration > 0 && "Stem villous vessel obliteration"}</span>
+<span>{FVM.summerizeKaryorrhexis(data)}</span>
+<span>{FVM.summerizeAvascularVilli(data)}</span> */}
+
+export default {
   isFetalVasMalperfusion, 
   determineGrade, 
   summerizeThrombus, 
   summerizeFibrin, 
   summerizeKaryorrhexis,
-  summerizeAvascularVilli
+  summerizeAvascularVilli,
+  getListOfFeaures
 }

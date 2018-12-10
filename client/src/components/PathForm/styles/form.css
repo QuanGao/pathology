@@ -23,12 +23,6 @@
     margin-bottom: 0.6em;
     line-height: 1;
 }
-.action-buttons {
-    margin-top: 10px;
-}
-.section-title h4 {
-}
-
 .section-title h5 {
     color: grey;
 }
@@ -42,9 +36,12 @@
     position: -webkit-sticky;
     position: sticky;
     top: 60px;
+    margin-top: -40px;
 }
-
+.bottom-section.action-buttons {
+    margin-top: 5px;
+}
 .top-section.action-buttons, .bottom-section.action-buttons {
     float: right;
-    margin-right: 5px;
+    margin-right: 10px;
 }

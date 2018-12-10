@@ -30,7 +30,7 @@ class PathForm extends React.Component {
 
         // handle check box boolean field
         if(e.target.type === "radio"){
-            changedFieldValue = e.target.value == "yes" ? true : false
+            changedFieldValue = e.target.value === "yes" ? true : false
         }
         // handle nested field
         if(pathToChangedField){
